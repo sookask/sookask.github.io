@@ -45,7 +45,7 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl font-medium tracking-tighter sm:text-4xl md:text-5xl mb-4"
         >
-          Alessio Rubicini
+          sookask
         </motion.h1>
         {/*<motion.p 
           initial={{ opacity: 0, y: 20 }}

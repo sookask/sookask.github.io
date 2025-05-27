@@ -145,8 +145,8 @@ export default function DigitalCard() {
               transition: "transform 0.3s ease-out",
             }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-1">Alessio Rubicini</h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-2">iOS Developer</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-1">sookask</h2>
+            <p className="text-gray-500 dark:text-gray-400 mb-2">Silicon whisperer</p>
 
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="inline-block bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 px-3 py-1 rounded-full text-sm font-medium text-blue-800 dark:text-blue-300">

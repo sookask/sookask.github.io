@@ -31,7 +31,7 @@ export default function MissionPage() {
 						transition={{ duration: 0.7, delay: 0.1 }}
 						className="text-3xl font-medium tracking-tighter sm:text-4xl md:text-5xl mb-8"
 					>
-						mission.
+						DFU Mode Restore (Macs)
 					</motion.h1>
 					<motion.div
 						initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}

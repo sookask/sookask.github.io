@@ -7,13 +7,13 @@ import { Navigation } from "@/components/navigation"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Alessio Rubicini",
-  description: "Portfolio of Alessio Rubicini, iOS Developer and Computer Science Student",
+  title: "sookask",
+  description: "Sookask – Notes from the Edge of the Logic Board",
   generator: 'v0.dev'
 }
 
 // Set the last update date
-const lastUpdateDate = "May 22, 2025"
+const lastUpdateDate = "May 27, 2025"
 
 export default function RootLayout({
   children,
@@ -37,7 +37,7 @@ export default function RootLayout({
             <footer className="border-t py-6 md:py-0">
               <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
                 <p className="text-sm text-muted-foreground">
-                  © {new Date().getFullYear()} Alessio Rubicini. <span id="rights-reserved">All rights reserved.</span>
+                  © {new Date().getFullYear()} sookask. <span id="rights-reserved">All rights reserved.</span>
                 </p>
                 <p className="text-sm text-muted-foreground">
                   <span id="last-update">Last updated:</span> {lastUpdateDate}
