@@ -1,0 +1,105 @@
+[
+	{
+		"id": 12,
+		"title": "EcoGPT",
+		"description": "A macOS menu bar application that helps users track and understand the environmental impact of their ChatGPT usage. By monitoring your prompts in real-time, EcoGPT provides immediate feedback on the carbon footprint of your AI interactions.",
+		"link": "https://github.com/alessiorubicini/EcoGPT",
+		"type": "application",
+		"year": "2025",
+		"motivation": "Built to raise awareness about AI's environmental impact",
+		"logoImage": "/assets/images/projects/ecogpt.png"
+	},
+	{
+	  "id": 1,
+	  "title": "Screenplay Genie",
+	  "description": "An educational iPad app designed to teach users the fundamentals of screenwriting. It features interactive lessons, live previews of scripts in proper screenplay format, and a free writing playground with support for Fountain Markdown.",
+	  "link": "/things/screenplay-genie",
+	  "type": "application",
+	  "year": "2025",
+	  "motivation": "Created to make screenwriting education accessible and interactive",
+	  "logoImage": "/assets/images/projects/ScreenplayGenie.png"
+	},
+	{
+	  "id": 2,
+	  "title": "Swift Sessions",
+	  "description": "A comprehensive Swift package that implements binary session types, providing a robust framework for ensuring safe and structured communication in concurrent systems.",
+	  "link": "https://github.com/alessiorubicini/SwiftSessions",
+	  "type": "package",
+	  "year": "2024",
+	  "motivation": "Created to advance the field of concurrent programming through type-safe communication",
+	  "logoImage": "/assets/images/projects/SwiftSessions.png"
+	},
+	{
+		"id": 10,
+		"title": "digitalgarage.unicam.it",
+		"description": "A web platform for the Digital Communication and Marketing course by Professor Ugo Esposito at the University of Camerino. A Classroom-style platform where students can get to know each other, form groups, collaborate, and manage the entire experience of the Digital Garage project group.",
+		"link": "https://digitalgarage.unicam.it",
+		"type": "application",
+		"year": "2024",
+		"motivation": "Built to enhance student collaboration",
+		"logoImage": "/assets/images/projects/digitalgarage.png"
+	},
+	{
+		"id": 3,
+		"title": "Pencil Drawer for SwiftUI",
+		"description": "A SwiftUI package enabling users to draw within apps using a simple interface. It simplifies the integration of PencilKit by using SwiftUI's binding system to handle drawing data.",
+		"technologies": ["Swift", "SwiftUI", "PencilKit"],
+		"link": "https://github.com/alessiorubicini/PencilDrawerForSwiftUI",
+		"type": "package",
+		"year": "2023",
+		"motivation": "Created to simplify drawing integration in SwiftUI apps",
+		"logoImage": "/assets/images/projects/PencilDrawer.png"
+	},
+	{
+		"id": 11,
+		"title": "Exoplanet Cataloguer",
+		"description": "A Java application designed to help astronomy researchers manage and classify their own catalogs of exoplanets. Built around a custom OWL-DL ontology and powered by Apache Jena and the Pellet reasoner, it infers useful data such as planetary classification, composition, potential habitability, and stellar types.",
+		"technologies": ["Java", "Apache Jena", "OWL"],
+		"link": "https://github.com/alessiorubicini/ExoplanetCataloguer",
+		"type": "application",
+		"year": "2023",
+		"motivation": "Developed to assist astronomers in organizing exoplanet research",
+		"logoImage": "/assets/images/projects/exoplanet-cataloguer.png"
+	},
+	{
+		"id": 5,
+		"title": "Location Picker for SwiftUI",
+		"description": "A SwiftUI package providing an interactive view for selecting geographic coordinates. It allows users to select a location on a map, with real-time coordinate display and easy integration via SwiftUI bindings.",
+		"link": "https://github.com/alessiorubicini/LocationPickerForSwiftUI",
+		"type": "package",
+		"year": "2021",
+		"motivation": "Built to simplify location selection in SwiftUI apps",
+		"logoImage": "/assets/images/projects/LocationPicker.png"
+	},
+	{
+		"id": 4,
+		"title": "SF Symbols Picker for SwiftUI",
+		"description": "A SwiftUI package that provides an easy-to-use picker for selecting SF Symbols in iOS and macOS apps. It supports seamless symbol selection with binding integration and customization options.",
+		"link": "https://github.com/alessiorubicini/SFSymbolsPickerForSwiftUI",
+		"type": "package",
+		"year": "2021",
+		"motivation": "Created to make SF Symbols selection more intuitive",
+		"logoImage": "/assets/images/projects/SFSymbolsPicker.png"
+	},
+	{
+		"id": 6,
+		"title": "Island Alerts for SwiftUI",
+		"description": "A SwiftUI package offering various alert styles designed to integrate smoothly with the iPhone's Dynamic Island and Notch. It provides customizable alerts like large, medium, and square sizes for Dynamic Island, and similar options for the Notch.",
+		"technologies": ["Swift", "SwiftUI"],
+		"link": "https://github.com/alessiorubicini/IslandAlertsForSwiftUI",
+		"type": "package",
+		"year": "2022",
+		"motivation": "Developed to enhance Dynamic Island integration in SwiftUI apps",
+		"logoImage": "/assets/images/projects/IslandAlerts.png"
+	},
+	{
+	  "id": 7,
+	  "title": "GameZen",
+	  "description": "An iOS client-side app for a board game e-commerce store. The app allows a complete customer-seller interaction with registration, catalog consultation, purchase and order tracking. Created as a project for my high school final exam.",
+	  "link": "https://github.com/alessiorubicini/GameZen-iOS",
+	  "type": "application",
+	  "year": "2021",
+	  "motivation": "Built as my first iOS app",
+	  "logoImage": "/assets/images/projects/GameZen.png"
+	}
+]
