@@ -1,25 +1,25 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-	title: "Mission | Alessio Rubicini",
-	description: "My mission to build technology that creates space for human creativity and potential.",
+	title: "DFU mode | sookask",
+	description: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
 	openGraph: {
-		title: "Mission | Alessio Rubicini",
-		description: "My mission to build technology that creates space for human creativity and potential.",
+		title: "DFU mode | sookask",
+		description: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
 		images: [
 			{
-				url: "/assets/images/Rain-Steam-and-Speed-JMW.jpg",
+				url: "/assets/images/Do-not-reflow-t2.png",
 				width: 1200,
 				height: 800,
-				alt: "Rain, Steam and Speed - The Great Western Railway by J.M.W. Turner",
+				alt: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Mission | Alessio Rubicini",
-		description: "My mission to build technology that creates space for human creativity and potential.",
-		images: ["/assets/images/Rain-Steam-and-Speed-JMW.jpg"],
+		title: "DFU mode | sookask",
+		description: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
+		images: ["/assets/images/Do-not-reflow-t2.png"],
 	},
 }
 

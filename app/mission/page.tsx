@@ -40,15 +40,15 @@ export default function MissionPage() {
 						className="w-full mb-12"
 					>
 						<Image
-							src="/assets/images/Rain-Steam-and-Speed-JMW.jpg"
-							alt="Rain, Steam and Speed - The Great Western Railway by J.M.W. Turner"
+							src="/assets/images/Do-not-reflow-t2.png"
+							alt="Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked."
 							width={1200}
 							height={800}
 							className="w-full h-auto rounded-lg object-cover"
 							priority
 						/>
 						<p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
-							J.M.W. Turner's "Rain, Steam and Speed – The Great Western Railway" (1844). A powerful reminder of how technology can transform our world, just as the steam train once did.
+							Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.
 						</p>
 					</motion.div>
 					<motion.div 
@@ -57,54 +57,43 @@ export default function MissionPage() {
 						transition={{ duration: 0.7, delay: 0.3 }}
 						className="text-muted-foreground text-lg leading-relaxed space-y-6 text-left"
 					>
+						<h2 className="text-2xl font-semibold">DFU Mode and Troubleshooting</h2>
+						<p>To check if the device is in DFU state, check voltage on SOC_DFU_STATUS. It should be 1.8V if T2 is in DFU mode.</p>
+						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
+						<ul className="list-disc list-inside space-y-2">
+							<li><strong>Error 1:</strong> Trackpad not connected.</li>
+							<li><strong>Error 6:</strong> BridgeOS write failure, likely SSD issue.</li>
+							<li><strong>Error 9:</strong> NAND/RAM/Processor power issue or mismatch.</li>
+							<li><strong>Error 10:</strong> Bad cable or unstable connection.</li>
+							<li><strong>Error 21:</strong> SoC ROM or NAND failure/mismatch.</li>
+							<li><strong>Error 35:</strong> NAND trace/sysconfig mismatch.</li>
+							<li><strong>Error 56:</strong> Cracked Stockholm chip.</li>
+							<li><strong>Error 75:</strong> T2 in recovery mode; revive won’t work.</li>
+							<li><strong>Error 3004:</strong> No internet connection.</li>
+							<li><strong>Error 3501 (0xDAD):</strong> Target Mac not powered.</li>
+							<li><strong>Error 4005:</strong> SSD not detected.</li>
+							<li><strong>Error 4013/4016:</strong> NAND sysconfig issue.</li>
+							<li><strong>Error 4014:</strong> Unexpected reset — T2 RAM, power, or battery issue.</li>
+							<li><strong>Error 4042/4045:</strong> Timeout error.</li>
+						</ul>
+						<h3 className="text-xl font-semibold">Post-DFU and OS Recovery Issues</h3>
+						<ul className="list-disc list-inside space-y-2">
+							<li><strong>GUI issues:</strong> Can be caused by low battery or temp sensor problems.</li>
+							<li><strong>Error -2003F:</strong> Usually internet-related, try Thunderbolt-LAN adapter.</li>
+							<li><strong>Error -1008F:</strong> iCloud locked device. Remove from FMM/iCloud and retry.</li>
+						</ul>
+						<h3 className="text-xl font-semibold">General Troubleshooting Tips</h3>
+						<ul className="list-disc list-inside space-y-2">
+							<li>Try known good battery and trackpad.</li>
+							<li>Disconnect unnecessary peripherals.</li>
+							<li>Try external power without battery.</li>
+							<li>Inspect cable and connection stability.</li>
+						</ul>
+						<h3 className="text-xl font-semibold">iBoot Log and Factory Debugging</h3>
 						<p>
-							We live in a world that is fast, connected, and intelligent. Every part of our day is touched by technology. We carry more computing power in our pockets than ever before, yet we feel overwhelmed. We have more tools than ever, but less time to truly use them. More information, but less clarity. More opportunities, but less initiative.
+							Using a potassium/banana cable device, factory logs can be accessed via CD3215/17 debug port. This helps diagnose NAND, RAM, PCH, GPU and other Intel EFI issues.
 						</p>
-						<p>
-							Our days are filled with calendars, notifications, and to-do lists that steal our attention. We adapt and survive, but too often we stop imagining. We stop creating. We stop building something of our own.
-						</p>
-						<p>
-							I refuse to accept this as the norm.
-						</p>
-						<p>
-							I believe every person carries within them a <strong>vast creative energy</strong>, too often held back by the noise and complexity of modern life. I believe technology shouldn't add more noise, but create space for silence, clarity, and possibility. Not just to optimize or entertain, but to activate. To remove friction and distractions, and give people back their time and agency.
-						</p>
-						<p>
-							This is my obsession: to build things that lighten the load. That give back real time, not just productivity. That don't make people more efficient, but more free. More creative. More alive.
-						</p>
-						<p>
-							I don't want to write just another app or follow trends. I want to go deeper. I want to build things that <strong>reignite the spark</strong>, that help people rediscover motivation and direction.
-						</p>
-						<p>
-							I believe it's time to rethink how we interact with machines. Today's interfaces, made of screens, swipes, and endless taps, feel increasingly outdated. They chain us to repetitive gestures and scattered attention. We need a new kind of interface that is personal and alive. An extension of the self. Present when needed, silent when not. Always learning and aligned with who we are and what we want to become.
-						</p>
-						<p>
-							I imagine an AI that is not just a tool that responds, but a quiet, intelligent, constant companion, a personal co-pilot, an amplifier of intent. Not something cold trapped behind a screen, but something human in its presence. A partner that automates, suggests, protects, without needing to be managed. That works with us, for us.
-						</p>
-						<p>
-							I don't care about artificial intelligence as a show of power or as innovation for its own sake. I care about it as an <strong>extension of thought</strong>. An invisible ally that doesn't decide for you, but helps you decide better. Not a competitor, but a companion that completes what you can become.
-						</p>
-						<p>
-							This is not just about technology. It's about vision. Ethics. Responsibility. I want to bring an artist's mindset to technological creation, driven by listening, care, and love for what genuinely improves people's lives, even in small ways.
-						</p>
-						<p>
-							I'm a developer. But first, I'm a human being, watching the world, asking questions, refusing to settle for superficial answers.
-						</p>
-						<p>
-							I'm doing this because I believe in it. Because I feel we're at a rare point in time where we have the chance to <strong>rethink how we live, work, and create</strong>. I don't want to be a spectator. I want to play an active role in this transition. I want to look back one day and say: I used my hands, my mind, and my vision to build things that left a mark.
-						</p>
-						<blockquote className="border-l-4 border-black dark:border-white pl-4 my-6 italic text-lg">
-							<p>"We're here to put a dent in the universe. Otherwise why else even be here?"</p>
-							<footer className="text-sm mt-2 not-italic">— Steve Jobs</footer>
-						</blockquote>
-						<p>
-							I don't have all the answers yet. But I have a clear direction. Every day I study, build, make mistakes, and try again. This mission is my starting point.
-						</p>
-						<p>
-							And if you, too, feel like time is short and potential is too vast to stay dormant,
-							if you believe it's time to go beyond and build something truly new,
-							then maybe, just maybe, we're looking for the same thing.
-						</p>
+						<p className="text-sm text-gray-500">Source: <a className="underline" href="https://logi.wiki/index.php/DFU_Mode_Restore_(Macs)" target="_blank">logi.wiki</a></p>
 					</motion.div>
 				</motion.div>
 			</div>
