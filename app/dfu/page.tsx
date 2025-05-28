@@ -84,24 +84,33 @@ export default function DFUPage() {
 						<h2 className="text-4xl font-semibold mb-4">
 							Teadaolevad veakoodid ja tähendused
 						</h2>
-						<ul className="list-disc list-inside text-base space-y-1 mb-4">
-							<li><strong>1:</strong> Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud.</li>
-							<li><strong>6:</strong> SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND.</li>
-							<li><strong>9:</strong> Toiteviga (NAND/RAM/SEP ROM mismatch).</li>
-							<li><strong>10:</strong> Kehv kaabel või ühendus.</li>
-							<li><strong>21:</strong> SoC ROM või NAND mismatch.</li>
-							<li><strong>35:</strong> NAND-trace/sysconfig mismatch.</li>
-							<li><strong>56:</strong> Vigane või pragunenud Stockholm-kivi.</li>
-							<li><strong>75:</strong> T2 bootis recoverysse; revive ei tööta.</li>
-							<li><strong>3004:</strong> Hostil internet puudub.</li>
-							<li><strong>3501:</strong> Seade soovib lisavõimsust.</li>
-							<li><strong>4005:</strong> NAND puudub.</li>
-							<li><strong>4013/4016:</strong> NAND-sysconfig viga.</li>
-							<li><strong>4014:</strong> Ootamatu restart (RAM/võimsus/või aku).</li>
-							<li><strong>4042/4045:</strong> Timeout (tõenäoline NAND viga).</li>
-						</ul>
-					</section>
 
+						<dl className="divide-y divide-gray-200 dark:divide-gray-700">
+							{[
+								["1", "Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud."],
+								["6", "SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND."],
+								["9", "Toiteviga (NAND/RAM/SEP ROM mismatch)."],
+								["10", "Kehv kaabel või ühendus."],
+								["21", "SoC ROM või NAND mismatch."],
+								["35", "NAND-trace/sysconfig mismatch."],
+								["56", "Vigane või pragunenud Stockholm-kivi."],
+								["75", "T2 bootis recoverysse; revive ei tööta."],
+								["3004", "Hostil internet puudub."],
+								["3501", "Seade soovib lisavõimsust."],
+								["4005", "NAND puudub."],
+								["4013", "NAND-sysconfig viga."],
+								["4014", "Ootamatu restart (RAM/võimsus/või aku)."],
+								["4042", "Timeout (tõenäoline NAND viga)."],
+							].map(([code, desc]) => (
+								<div key={code} className="py-6">
+									<dt className="text-2xl font-medium">{code}</dt>
+									<dd className="mt-2 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+										{desc}
+									</dd>
+								</div>
+							))}
+						</dl>
+					</section>
 
 					{/* Section 3 */}
 					<section className="space-y-4">
