@@ -85,34 +85,49 @@ export default function DFUPage() {
 							Teadaolevad veakoodid ja tähendused
 						</h2>
 
-						<div className="divide-y divide-gray-200 dark:divide-gray-700">
-							{[
-								["1", "Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud."],
-								["6", "SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND."],
-								["9", "Toiteviga (NAND/RAM/SEP ROM mismatch)."],
-								["10", "Kehv kaabel või ühendus."],
-								["21", "SoC ROM või NAND mismatch."],
-								["35", "NAND-trace/sysconfig mismatch."],
-								["56", "Vigane või pragunenud Stockholm-kivi."],
-								["75", "T2 bootis recoverysse; revive ei tööta."],
-								["3004", "Hostil internet puudub."],
-								["3501", "Seade soovib lisavõimsust."],
-								["4005", "NAND puudub."],
-								["4013", "NAND-sysconfig viga."],
-								["4014", "Ootamatu restart (RAM/võimsus/või aku)."],
-								["4042", "Timeout (tõenäoline NAND viga)."]
-							].map(([code, desc]) => (
-								<div key={code} className="py-6 grid grid-cols-[3rem_1fr] items-start">
-									{/* Error code */}
-									<div className="text-2xl font-medium text-gray-900 dark:text-gray-100">
-										{code}
-									</div>
-									{/* Description */}
-									<div className="ml-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-										{desc}
-									</div>
-								</div>
-							))}
+						<div className="overflow-x-auto">
+							<table className="w-full text-left border-collapse">
+								{/* Table header */}
+								<thead className="border-b-2 border-gray-200 dark:border-gray-700">
+									<tr>
+										<th className="pb-3 pr-6 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
+											Kood
+										</th>
+										<th className="pb-3 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
+											Tähendus
+										</th>
+									</tr>
+								</thead>
+
+								{/* Table body */}
+								<tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+									{[
+										["1", "Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud."],
+										["6", "SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND."],
+										["9", "Toiteviga (NAND/RAM/SEP ROM mismatch)."],
+										["10", "Kehv kaabel või ühendus."],
+										["21", "SoC ROM või NAND mismatch."],
+										["35", "NAND-trace/sysconfig mismatch."],
+										["56", "Vigane või pragunenud Stockholm-kivi."],
+										["75", "T2 bootis recoverysse; revive ei tööta."],
+										["3004", "Hostil internet puudub."],
+										["3501", "Seade soovib lisavõimsust."],
+										["4005", "NAND puudub."],
+										["4013", "NAND-sysconfig viga."],
+										["4014", "Ootamatu restart (RAM/võimsus/või aku)."],
+										["4042", "Timeout (tõenäoline NAND viga)."]
+									].map(([code, desc]) => (
+										<tr key={code}>
+											<td className="py-4 pr-6 align-top text-2xl font-medium text-gray-900 dark:text-gray-100">
+												{code}
+											</td>
+											<td className="py-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+												{desc}
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
 						</div>
 					</section>
 
