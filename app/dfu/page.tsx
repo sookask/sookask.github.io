@@ -57,13 +57,17 @@ export default function DFUPage() {
 						transition={{ duration: 0.7, delay: 0.3 }}
 						className="text-lg leading-relaxed space-y-6 text-left text-gray-900 dark:text-gray-100"
 					>
-						<h1 className="text-4xl font-semibold">Rituaalid enne mahakandmist</h1>
+						<h1 className="text-4xl font-semibold">Rituaalid enne elektroonikut</h1>
 						<p>
-  							Kui seade on black dull screen ja üles ei booti, jääb järele vaid DFU.
+  							Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2 kiviga seade muutuda laibaks. Seda juhtub harva, kui DFU midagi korda teeb aga kui teeb siis on see üks ilus päev. Tüüpilised sümptomid:
   							<br />
-  							Siia on kogutud näpunäited ja vead, mis viitavad ülekuumenevatele NANDidele, katkistele vooluahelatele, surevale RAMile ja korruptsioonile sügaval süsteemikonfiguratsioonis.
-  							<br />
-  							Revive? Vaevalt. Restore? Ilmselgelt.
+							<ul className="list-disc list-inside text-lg mb-4 space-y-2">
+  								<li>Apple Silicon seadmel on käivitamisel hüüumärk ees</li>
+  								<li>Seade läheb käima, aga pilti ette ei võta</li>
+  								<li>Peale seerianumbri vahetust ainult 5V</li>
+  								<li>Mis tahes ebõnnestunud OS install</li>
+							</ul>
+  							  Nendel juhtudel võiks DFU tegemisest kasu olla. Kui enam DFU tegemine ka ei aita, siis tuleks juba elektroonikud protsessi kaasata.
 							<br /><br />
 						</p>
 						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
