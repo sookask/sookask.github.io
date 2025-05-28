@@ -63,7 +63,7 @@ export function Navigation() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex-1 flex justify-start">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-medium">Alessio Rubicini</span>
+            <span className="font-medium">Sookask</span>
           </Link>
         </div>
         <div className="hidden md:flex flex-1 justify-center">

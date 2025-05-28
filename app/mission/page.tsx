@@ -40,22 +40,22 @@ export default function MissionPage() {
 						className="w-full mb-12"
 					>
 						<Image
-							src="/assets/images/Do-not-reflow-t2.png"
-							alt="Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked."
+							src="/assets/images/Do-not-reflowt2.png"
+							alt="Rain, Steam and Speed - The Great Western Railway by J.M.W. Turner"
 							width={1200}
 							height={800}
 							className="w-full h-auto rounded-lg object-cover"
 							priority
 						/>
 						<p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
-							Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.
+							J.M.W. Turner's "Rain, Steam and Speed – The Great Western Railway" (1844). A powerful reminder of how technology can transform our world, just as the steam train once did.
 						</p>
 					</motion.div>
 					<motion.div 
 						initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 						animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 						transition={{ duration: 0.7, delay: 0.3 }}
-						className="text-muted-foreground text-lg leading-relaxed space-y-6 text-left"
+						className="text-lg leading-relaxed space-y-6 text-left text-gray-900 dark:text-gray-100"
 					>
 						<h2 className="text-2xl font-semibold">DFU Mode and Troubleshooting</h2>
 						<p>To check if the device is in DFU state, check voltage on SOC_DFU_STATUS. It should be 1.8V if T2 is in DFU mode.</p>
@@ -100,4 +100,3 @@ export default function MissionPage() {
 		</div>
 	)
 }
-

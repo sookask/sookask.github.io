@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/translations"
 import { useEffect, useState } from "react"
-import { Award } from "lucide-react"
+import { Cpu } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
           className="relative w-32 h-32 mb-8 overflow-hidden rounded-full border-4 border-background bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/50"
         >
           <Image
-            src="/assets/images/alessio.jpeg"
+            src="/assets/images/bitmap.jpg"
             alt="Profile picture"
             fill
             className="object-cover"
@@ -61,7 +61,7 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-black dark:text-white max-w-[700px] mb-4 text-base font-light"
         >
-          iOS Developer and Computer Science Student. I build technology that amplifies human potential, removes friction, and creates space for creativity.
+          In the labyrinth of logic boards, truth hides in the shadows of failed handshakes and silent rails.
         </motion.p>
 
         <motion.div 
@@ -70,8 +70,8 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mb-8 inline-flex items-center rounded-full border mt-2 px-4 py-1.5 text-sm font-medium bg-white/10 dark:bg-black/10 text-black dark:text-white border-black dark:border-white backdrop-blur-sm"
         >
-          <Award className="mr-1.5 h-4 w-4" />
-          Apple WWDC25 Swift Student Challenge Winner
+          <Cpu className="mr-1.5 h-4 w-4" />
+          Firmware fails loud. Hardware fails quiet. Learn to hear both
         </motion.div>
 
         <motion.div 
