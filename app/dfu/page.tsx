@@ -57,11 +57,11 @@ export default function DFUPage() {
 					initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 					animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 					transition={{ duration: 0.7, delay: 0.3 }}
-					className="text-gray-900 dark:text-gray-100 leading-relaxed space-y-6"
+					className="text-gray-900 dark:text-gray-100 leading-relaxed space-y-12"
 				>
 
 					{/* Section 1 */}
-					<section className="space-y-4 mb-8">
+					<section className="space-y-4">
 						<h1 className="text-4xl font-semibold mb-4">
 							Rituaalid enne elektroonikut
 						</h1>
@@ -78,10 +78,9 @@ export default function DFUPage() {
 							Nendel juhtudel võiks DFU tegemisest kasu olla. Kui DFU enam ei aita, tuleks juba elektroonikud protsessi kaasata.
 						</p>
 					</section>
-					<br />
 
 					{/* Section 2 */}
-					<section className="space-y-6 mb-8">
+					<section className="space-y-6">
 						<h2 className="text-4xl font-semibold mb-4">
 							Teadaolevad veakoodid ja tähendused
 						</h2>
@@ -105,7 +104,7 @@ export default function DFUPage() {
 
 
 					{/* Section 3 */}
-					<section className="space-y-4 mb-8">
+					<section className="space-y-4">
 						<h2 className="text-2xl font-semibold mb-4">
 							Veakoodid Recoverysse bootimisel
 						</h2>
@@ -116,7 +115,7 @@ export default function DFUPage() {
 					</section>
 
 					{/* Section 4 */}
-					<section className="space-y-4 mb-8">
+					<section className="space-y-4">
 						<h2 className="text-2xl font-semibold mb-4">
 							Üldised näpunäited
 						</h2>
