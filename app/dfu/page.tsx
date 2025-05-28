@@ -91,10 +91,13 @@ export default function DFUPage() {
 								<thead className="border-b-2 border-gray-200 dark:border-gray-700">
 									<tr>
 										<th className="pb-3 pr-6 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
-											Kood
+											Veakood
+										</th>
+										<th className="pb-3 pr-6 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
+											Põhjus
 										</th>
 										<th className="pb-3 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
-											Tähendus
+											Lisainfo
 										</th>
 									</tr>
 								</thead>
@@ -102,27 +105,30 @@ export default function DFUPage() {
 								{/* Table body */}
 								<tbody className="divide-y divide-gray-200 dark:divide-gray-700">
 									{[
-										["1", "Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud."],
-										["6", "SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND."],
-										["9", "Toiteviga (NAND/RAM/SEP ROM mismatch)."],
-										["10", "Kehv kaabel või ühendus."],
-										["21", "SoC ROM või NAND mismatch."],
-										["35", "NAND-trace/sysconfig mismatch."],
-										["56", "Vigane või pragunenud Stockholm-kivi."],
-										["75", "T2 bootis recoverysse; revive ei tööta."],
-										["3004", "Hostil internet puudub."],
-										["3501", "Seade soovib lisavõimsust."],
-										["4005", "NAND puudub."],
-										["4013", "NAND-sysconfig viga."],
-										["4014", "Ootamatu restart (RAM/võimsus/või aku)."],
-										["4042", "Timeout (tõenäoline NAND viga)."]
-									].map(([code, desc]) => (
+										["1", "Trackpad ei ole ühendatud. Püsivara taastamiseks peab olema trackpad ühendatud.", "Ühenda trackpad ja proovi uuesti. Võimalusel proovi testmasinasse."],
+										["6", "Viitab SSD veale. BridgeOS-i ei suuda kirjutada. Võimalik, et üks NANDidest on kuum.", "Kontrolli kas on kuum, kui on vii elektroonikule."],
+										["9", "Sellel veal võib olla mitmeid põhjuseid. Potentsiaalselt võib olla prose, RAM-i või NANDi toitetalitluse häire.", "Proovi teist SEP ROM-i. Veendu, et heatsink oleks ka peal."],
+										["10", "Kehv kaabel või ühendus.", "Proovi teist kaablit või I/O boardi."],
+										["21", "SoC ROM-i probleem Apple Silicon seadmetel", "Proovi teist SoC ROM-i."],
+										["35", "NAND-trace/sysconfig mismatch.", "Kontrolli kas NANDi piirkonnas on vedelikahjustusi."],
+										["56", "Vigane või pragunenud Stockholm-kivi.", "Vii elektroonikule."],
+										["75", "T2 bootis recoverysse; revive ei tööta.", "Käivita DFU taasterežiim uuesti."],
+										["3004", "Su arvuti ei saa interneiga ühendust", "Proovi teist võrku."],
+										["3501", "Seade ei ole vooluvõrgus.", "Ühenda toitekaabel järgi, jälgi tarbimist."],
+										["4005", "SSD-ga ei saa ühendust.", "Suure tõenäosusega prügi plaat."],
+										["4013", "NAND-sysconfig viga.", "Ilmselt NANDi viga."],
+										["4014", "Ootamatu reset. Võib olla tingitud T2 RAMist", "Eemalda aku ja proovi uuesti."],
+										["4042", "Timeout (tõenäoline NANDi viga).", "Suht 100% NANDi viga."],
+									].map(([code, desc, info]) => (
 										<tr key={code}>
 											<td className="py-4 pr-6 align-top text-2xl font-medium text-gray-900 dark:text-gray-100">
 												{code}
 											</td>
-											<td className="py-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+											<td className="py-4 pr-6 align-top text-base text-gray-700 dark:text-gray-300 leading-relaxed">
 												{desc}
+											</td>
+											<td className="py-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+												{info}
 											</td>
 										</tr>
 									))}
