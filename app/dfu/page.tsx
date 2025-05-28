@@ -61,7 +61,7 @@ export default function DFUPage() {
 						<p>
   							Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2 kiviga seade muutuda laibaks. Seda juhtub harva, kui DFU midagi korda teeb aga kui teeb siis on see üks ilus päev. Tüüpilised sümptomid:
   							<br />
-							<ul className="list-disc list-inside text-lg mb-2 space-y-2">
+							<ul className="list-disc list-inside text-base mb-4 space-y-2">
   								<li>Apple Silicon seadmel on käivitamisel hüüumärk ees</li>
   								<li>Seade läheb käima, aga pilti ette ei võta</li>
   								<li>Peale seerianumbri vahetust ainult 5V</li>
