@@ -2,11 +2,11 @@
 	{
 		"id": 12,
 		"title": "Mist",
-		"description": "macOS Installer Super Tool. Mac tööriist, mis laeb automaatselt alla macOS püsivara ja tarkvara. Ka vanemaid versioone",
+		"description": "Mist (macOS Installer Super Tool) on avatud lähtekoodiga rakendus, mis võimaldab Maci kasutajatel automaatselt alla laadida macOS-i installereid (.app, .dmg, .iso, .pkg) ja püsivara faile (.ipsw). See toetab nii Apple Silicon kui ka Intel Mac-arhitektuure ning võimaldab valida erinevate tarkvarakataloogide (sh arendaja- ja beetaversioonide) vahel.",
 		"link": "https://github.com/ninxsoft/Mist",
 		"type": "äpp",
 		"year": "2025",
-		"motivation": "macOS Installer tööriist, mis võimaldab alla laadida igasuguseid macOS versioone.",
+		"motivation": "tasuta macOS-i tööriist, mis võimaldab alla laadida erinevaid macOS-i installereid ja püsivara (sh vanemaid ja beetaversioone) nii Apple Silicon kui ka Intel Macidele.",
 		"logoImage": "/assets/images/projects/mist.png"
 	},
 	{
