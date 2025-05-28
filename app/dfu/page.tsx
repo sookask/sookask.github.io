@@ -145,7 +145,7 @@ export default function DFUPage() {
 						</div>
 						{/* Recovery-mode codes below the table */}
 						<div className="pt-4 space-y-2">
-							<h3 className="text-2xl font-regular">
+							<h3 className="text-xl font-regular">
 								Veakoodid Recoverysse bootimisel
 							</h3>
 							<ul className="list-disc list-inside text-base space-y-1 text-gray-700 dark:text-gray-300">
@@ -166,8 +166,8 @@ export default function DFUPage() {
 						</h2>
 						<ul className="list-disc list-inside text-base space-y-1">
 							<li>Kontrolli alati aku ja trackpadi seisukorda.</li>
-							<li>Eemalda kõik ebavajalikud seadmed enne DFU-d.</li>
-							<li>Katseta masinat teise komplektse komponentehnoloogi abil.</li>
+							<li>Ebaõnnestumisel ühenda lahti mittevajalikud komponendid.</li>
+							<li>Võimalusel proovi testmasinat, kui seade on vedelikahjustusega.</li>
 							<li>Kasuta Recoverysse minnes alati LAN-kaablit.</li>
 						</ul>
 					</section>
