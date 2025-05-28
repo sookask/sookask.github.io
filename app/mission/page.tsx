@@ -61,20 +61,25 @@ export default function MissionPage() {
 						<p>To check if the device is in DFU state, check voltage on SOC_DFU_STATUS. It should be 1.8V if T2 is in DFU mode.</p>
 						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
 						<ul className="list-disc list-inside space-y-2">
-							<p><strong>Error 1:</strong> The trackpad is not connected (For successful firmware, the MacBook needs a connected working trackpad).</p>
-							<p><strong>Error 6:</strong> Probably could not write BridgeOS into service partition. Most likely SSD failure. There might be one hot NAND. Common symptom - T2 does not turn on S5 rails at all. If you have it in revive mode, try restore (All data will be lost!).</p>
-							<p><strong>Error 9:</strong> NAND/RAM/Processor power issue or mismatch.</p>
-							<p><strong>Error 10:</strong> Bad cable or unstable connection.</p>
-							<p><strong>Error 21:</strong> SoC ROM or NAND failure/mismatch.</p>
-							<p><strong>Error 35:</strong> NAND trace/sysconfig mismatch.</p>
-							<p><strong>Error 56:</strong> Cracked Stockholm chip.</p>
-							<p><strong>Error 75:</strong> T2 in recovery mode; revive won’t work.</p>
-							<p><strong>Error 3004:</strong> No internet connection.</p>
-							<p><strong>Error 3501 (0xDAD):</strong> Target Mac not powered.</p>
-							<p><strong>Error 4005:</strong> SSD not detected.</p>
-							<p><strong>Error 4013/4016:</strong> NAND sysconfig issue.</p>
-							<p><strong>Error 4014:</strong> Unexpected reset — T2 RAM, power, or battery issue.</p>
-							<p><strong>Error 4042/4045:</strong> Timeout error.</p>
+							<li><strong>Error 1:</strong> The trackpad is not connected (For successful firmware, the MacBook needs a connected working trackpad).</li>
+							<li>
+								<strong>Error 6:</strong> Probably could not write BridgeOS into service partition. Most likely SSD failure. There might be one hot NAND. Common symptom - T2 does not turn on S5 rails at all. If you have it in revive mode, try restore (All data will be lost!).
+								<ul className="list-disc list-inside pl-5 mt-1 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+									<li>Common symptom of Bad SSD volume is T2 tries SSD power resets every few seconds or up to 23 seconds.</li>
+								</ul>
+							</li>
+							<li><strong>Error 9:</strong> NAND/RAM/Processor power issue or mismatch.</li>
+							<li><strong>Error 10:</strong> Bad cable or unstable connection.</li>
+							<li><strong>Error 21:</strong> SoC ROM or NAND failure/mismatch.</li>
+							<li><strong>Error 35:</strong> NAND trace/sysconfig mismatch.</li>
+							<li><strong>Error 56:</strong> Cracked Stockholm chip.</li>
+							<li><strong>Error 75:</strong> T2 in recovery mode; revive won’t work.</li>
+							<li><strong>Error 3004:</strong> No internet connection.</li>
+							<li><strong>Error 3501 (0xDAD):</strong> Target Mac not powered.</li>
+							<li><strong>Error 4005:</strong> SSD not detected.</li>
+							<li><strong>Error 4013/4016:</strong> NAND sysconfig issue.</li>
+							<li><strong>Error 4014:</strong> Unexpected reset — T2 RAM, power, or battery issue.</li>
+							<li><strong>Error 4042/4045:</strong> Timeout error.</li>
 						</ul>
 						<h3 className="text-xl font-semibold">Post-DFU and OS Recovery Issues</h3>
 						<ul className="list-disc list-inside space-y-2">
