@@ -35,8 +35,8 @@ export function Navigation() {
 		active: pathname === "/dfu/",
 	},
     {
-      href: "/äpid",
-      label: "äpid",
+      href: "/staff",
+      label: "staff",
       active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
 	{
