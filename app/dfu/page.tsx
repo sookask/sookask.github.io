@@ -90,20 +90,20 @@ export default function DFUPage() {
 								{/* Table header */}
 								<thead className="border-b-2 border-gray-200 dark:border-gray-700">
 									<tr>
-										<th className="pb-3 pr-6 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
+										<th className="pb-3 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
 											Veakood
 										</th>
-										<th className="pb-3 pr-6 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
+										<th className="pb-3 px-8 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
 											Põhjus
 										</th>
-										<th className="pb-3 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
+										<th className="pb-3 px-8 text-sm font-medium text-gray-900 dark:text-gray-100 uppercase">
 											Lisainfo
 										</th>
 									</tr>
 								</thead>
 
-								{/* Table body */}
-								<tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+								{/* Table body with bottom border */}
+								<tbody className="divide-y divide-gray-200 dark:divide-gray-700 border-b border-gray-200 dark:border-gray-700">
 									{[
 										["1", "Trackpad ei ole ühendatud. Püsivara taastamiseks peab olema trackpad ühendatud.", "Ühenda trackpad ja proovi uuesti. Võimalusel proovi testmasinasse."],
 										["6", "Viitab SSD veale. BridgeOS-i ei suuda kirjutada. Võimalik, et üks NANDidest on kuum.", "Kontrolli kas on kuum, kui on vii elektroonikule."],
@@ -121,13 +121,16 @@ export default function DFUPage() {
 										["4042", "Timeout (tõenäoline NANDi viga).", "Suht 100% NANDi viga."],
 									].map(([code, desc, info]) => (
 										<tr key={code}>
-											<td className="py-4 pr-6 align-top text-2xl font-medium text-gray-900 dark:text-gray-100">
+											{/* Code */}
+											<td className="py-4 text-lg font-medium text-gray-900 dark:text-gray-100 text-center">
 												{code}
 											</td>
-											<td className="py-4 pr-6 align-top text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+											{/* Põhjus */}
+											<td className="py-4 px-8 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
 												{desc}
 											</td>
-											<td className="py-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+											{/* Lisainfo */}
+											<td className="py-4 px-8 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
 												{info}
 											</td>
 										</tr>
@@ -136,7 +139,6 @@ export default function DFUPage() {
 							</table>
 						</div>
 					</section>
-
 
 					{/* Section 3 */}
 					<section className="space-y-4">
