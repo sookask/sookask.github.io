@@ -78,6 +78,7 @@ export default function DFUPage() {
 							Nendel juhtudel võiks DFU tegemisest kasu olla. Kui DFU enam ei aita, tuleks juba elektroonikud protsessi kaasata.
 						</p>
 					</section>
+					<br /><br />
 
 					{/* Section 2 */}
 					<section className="space-y-6 mb-8">
