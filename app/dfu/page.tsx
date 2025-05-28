@@ -19,13 +19,13 @@ export default function DFUPage() {
 	return (
 		<div className="container px-4 md:px-6 py-12">
 			<div className="flex flex-col gap-8 max-w-3xl mx-auto">
-				<motion.div 
+				<motion.div
 					initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 					animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 					transition={{ duration: 0.7 }}
 					className="flex flex-col items-center text-center"
 				>
-					<motion.h1 
+					<motion.h1
 						initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 						animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 						transition={{ duration: 0.7, delay: 0.1 }}
@@ -51,62 +51,43 @@ export default function DFUPage() {
 							Mac with Apple silicon or the Apple T2 Security Chip might stop responding and need its firmware to be revived or restored by another Mac.
 						</p>
 					</motion.div>
-					<motion.div 
+					<motion.div
 						initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 						animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 						transition={{ duration: 0.7, delay: 0.3 }}
 						className="text-lg leading-relaxed space-y-6 text-left text-gray-900 dark:text-gray-100"
 					>
-						<h1 className="text-4xl font-semibold">Rituaalid enne elektroonikut</h1>
-						          {/* Section title */}
-          <h1 className="text-4xl font-semibold mb-4">
-            Rituaalid enne elektroonikut
-          </h1>
-
-          {/* Intro paragraph */}
-          <p className="mb-4">
-            Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2-kiviga seade muutuda laibaks.  
-            Seda juhtub harva — kui DFU midagi korda teeb, siis on see üks ilus päev.
-          </p>
-
-          {/* Symptoms heading */}
-          <p className="font-semibold mb-2">
-            Tüüpilised sümptomid:
-          </p>
-
-          {/* Bulleted list */}
-          <ul className="list-disc list-inside text-base mb-4 space-y-1">
-            <li>Apple Silicon seadmel on käivitamisel hüüumärk ees</li>
-            <li>Seade läheb käima, aga pilti ette ei võta</li>
-            <li>Peale seerianumbri vahetust ainult 5 V</li>
-            <li>Mis tahes ebõnnestunud OS-install</li>
-          </ul>
-
-          {/* Closing paragraph */}
-          <p>
-            Nendel juhtudel võiks DFU tegemisest kasu olla. Kui enam DFU enam ei aita, tuleks juba elektroonikud protsessi kaasata.
-          </p>
-						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
-						<ul className="list-disc list-inside space-y-2">
-							<li><strong>Error 1:</strong> The trackpad is not connected (For successful firmware, the MacBook needs a connected working trackpad).</li>
-							<li>
-								<strong>Error 6:</strong> Probably could not write BridgeOS into service partition. Most likely SSD failure. There might be one hot NAND. Common symptom - T2 does not turn on S5 rails at all. If you have it in revive mode, try restore (All data will be lost!).
-								<ul className="list-disc list-inside pl-5 mt-1 text-sm text-gray-600 dark:text-gray-400 space-y-1">
-									<li>Common symptom of Bad SSD volume is T2 tries SSD power resets every few seconds or up to 23 seconds.</li>
-								</ul>
-							</li>
-							<li><strong>Error 9:</strong> NAND/RAM/Processor power issue or mismatch.</li>
-							<li><strong>Error 10:</strong> Bad cable or unstable connection.</li>
-							<li><strong>Error 21:</strong> SoC ROM or NAND failure/mismatch.</li>
-							<li><strong>Error 35:</strong> NAND trace/sysconfig mismatch.</li>
-							<li><strong>Error 56:</strong> Cracked Stockholm chip.</li>
-							<li><strong>Error 75:</strong> T2 in recovery mode; revive won’t work.</li>
-							<li><strong>Error 3004:</strong> No internet connection.</li>
-							<li><strong>Error 3501 (0xDAD):</strong> Target Mac not powered.</li>
-							<li><strong>Error 4005:</strong> SSD not detected.</li>
-							<li><strong>Error 4013/4016:</strong> NAND sysconfig issue.</li>
-							<li><strong>Error 4014:</strong> Unexpected reset — T2 RAM, power, or battery issue.</li>
-							<li><strong>Error 4042/4045:</strong> Timeout error.</li>
+						<h1 className="text-4xl font-semibold mb-4">
+							Rituaalid enne elektroonikut
+						</h1>
+						<p className="mb-4">
+							Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2 kiviga seade muutuda laibaks. Seda juhtub harva, kui DFU midagi korda teeb aga kui teeb siis on see üks ilus päev. Tüüpilised sümptomid:
+						</p>
+						<ul className="list-disc list-inside text-base mb-4 space-y-1">
+							<li>Apple Silicon seadmel on käivitamisel hüüumärk ees</li>
+							<li>Seade läheb käima, aga pilti ette ei võta</li>
+							<li>Peale seerianumbri vahetust ainult 5 V</li>
+							<li>Mis tahes ebõnnestunud OS-install</li>
+						</ul>
+						<p>
+							Nendel juhtudel võiks DFU tegemisest kasu olla. Kui enam DFU enam ei aita, tuleks juba elektroonikud protsessi kaasata.
+						</p>
+						<h3 className="text-4xl font-semibold">Teadaolevad veakoodid ja tähendused</h3>
+						<ul className="list-disc list-inside text-base mb-4 space-y-1">
+							<li><strong>1:</strong> Trackpad ei ole ühendatud, püsivara taastamiseks peab olema trackpad ühendatud.</li>
+							<li><strong>6:</strong> Suure tõenäosusega SSD viga, BridgeOS ei suuda end kirjutada partitsioonile. Katsu kas mõni NAND on kuumemenud.</li>
+							<li><strong>9:</strong> NAND-i/RAM-i/ või protsessori toite viga. Võib ka olla vigane SEP ROM, proovi DFU-d. Kui ei aita siis vaheta SEP ROM.</li>
+							<li><strong>10:</strong> Kehv ühendus, proovi teist kaablit</li>
+							<li><strong>21:</strong> SoC ROM vahetus Apple Siliconil. Võib ka olla vigane NAND.</li>
+							<li><strong>35:</strong> NAND-i viga suure tõenäosusega.</li>
+							<li><strong>56:</strong> Vigane või mõranenud Stockholmi kivi.</li>
+							<li><strong>75:</strong> T2 bootis recoverysse. Proovi uuesti DFU-d teha.</li>
+							<li><strong>3004:</strong> Netti pole host arvutis.</li>
+							<li><strong>3501 (0xDAD):</strong> Seade mida taastab tahab lisatoidet. Pane kaabel järgi.</li>
+							<li><strong>4005:</strong> Ei leia NAND-i.</li>
+							<li><strong>4013/4016:</strong> NAND-i viga</li>
+							<li><strong>4014:</strong> Ootamatu restart. Võib olla T2 RAM-i viga või vigane aku.</li>
+							<li><strong>4042/4045:</strong> Timeout. Suure tõenäosusega NAND-i viga.</li>
 						</ul>
 						<h3 className="text-xl font-semibold">Post-DFU and OS Recovery Issues</h3>
 						<ul className="list-disc list-inside space-y-2">
