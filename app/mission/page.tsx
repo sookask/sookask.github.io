@@ -61,8 +61,8 @@ export default function MissionPage() {
 						<p>To check if the device is in DFU state, check voltage on SOC_DFU_STATUS. It should be 1.8V if T2 is in DFU mode.</p>
 						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
 						<ul className="list-disc list-inside space-y-2">
-							<li><strong>Error 1:</strong> Trackpad not connected.</li>
-							<li><strong>Error 6:</strong> BridgeOS write failure, likely SSD issue.</li>
+							<p>Error <strong>1:</strong> The trackpad is not connected (For successful firmware, the MacBook needs a connected working trackpad).</p>
+							<p>Error <strong>6:</strong> Probably could not write BridgeOS into service partition. Most likely SSD failure. There might be one hot NAND. Common symptom - T2 does not turn on S5 rails at all. If you have it in revive mode, try restore (All data will be lost!).</p>
 							<li><strong>Error 9:</strong> NAND/RAM/Processor power issue or mismatch.</li>
 							<li><strong>Error 10:</strong> Bad cable or unstable connection.</li>
 							<li><strong>Error 21:</strong> SoC ROM or NAND failure/mismatch.</li>
