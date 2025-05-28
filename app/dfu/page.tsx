@@ -85,36 +85,37 @@ export default function DFUPage() {
 							Teadaolevad veakoodid ja tähendused
 						</h2>
 
-						<table className="w-full">
-							<tbody>
-								{[
-									["1", "Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud."],
-									["6", "SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND."],
-									["9", "Toiteviga (NAND/RAM/SEP ROM mismatch)."],
-									["10", "Kehv kaabel või ühendus."],
-									["21", "SoC ROM või NAND mismatch."],
-									["35", "NAND-trace/sysconfig mismatch."],
-									["56", "Vigane või pragunenud Stockholm-kivi."],
-									["75", "T2 bootis recoverysse; revive ei tööta."],
-									["3004", "Hostil internet puudub."],
-									["3501", "Seade soovib lisavõimsust."],
-									["4005", "NAND puudub."],
-									["4013", "NAND-sysconfig viga."],
-									["4014", "Ootamatu restart (RAM/võimsus/või aku)."],
-									["4042", "Timeout (tõenäoline NAND viga)."]
-								].map(([code, desc]) => (
-									<tr key={code} className="align-top">
-										<td className="pr-6 text-2xl font-medium text-gray-900 dark:text-gray-100">
-											{code}
-										</td>
-										<td className="pb-6 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-											{desc}
-										</td>
-									</tr>
-								))}
-							</tbody>
-						</table>
+						<div className="divide-y divide-gray-200 dark:divide-gray-700">
+							{[
+								["1", "Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud."],
+								["6", "SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND."],
+								["9", "Toiteviga (NAND/RAM/SEP ROM mismatch)."],
+								["10", "Kehv kaabel või ühendus."],
+								["21", "SoC ROM või NAND mismatch."],
+								["35", "NAND-trace/sysconfig mismatch."],
+								["56", "Vigane või pragunenud Stockholm-kivi."],
+								["75", "T2 bootis recoverysse; revive ei tööta."],
+								["3004", "Hostil internet puudub."],
+								["3501", "Seade soovib lisavõimsust."],
+								["4005", "NAND puudub."],
+								["4013", "NAND-sysconfig viga."],
+								["4014", "Ootamatu restart (RAM/võimsus/või aku)."],
+								["4042", "Timeout (tõenäoline NAND viga)."]
+							].map(([code, desc]) => (
+								<div key={code} className="py-6 grid grid-cols-[3rem_1fr] items-start">
+									{/* Error code */}
+									<div className="text-2xl font-medium text-gray-900 dark:text-gray-100">
+										{code}
+									</div>
+									{/* Description */}
+									<div className="ml-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+										{desc}
+									</div>
+								</div>
+							))}
+						</div>
 					</section>
+
 
 					{/* Section 3 */}
 					<section className="space-y-4">
