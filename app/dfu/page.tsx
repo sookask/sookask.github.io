@@ -58,18 +58,34 @@ export default function DFUPage() {
 						className="text-lg leading-relaxed space-y-6 text-left text-gray-900 dark:text-gray-100"
 					>
 						<h1 className="text-4xl font-semibold">Rituaalid enne elektroonikut</h1>
-						<p>
-  							Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2 kiviga seade muutuda laibaks. Seda juhtub harva, kui DFU midagi korda teeb aga kui teeb siis on see üks ilus päev. Tüüpilised sümptomid:
-  							<br />
-							<ul className="list-disc list-inside text-base mb-4 space-y-2">
-  								<li>Apple Silicon seadmel on käivitamisel hüüumärk ees</li>
-  								<li>Seade läheb käima, aga pilti ette ei võta</li>
-  								<li>Peale seerianumbri vahetust ainult 5V</li>
-  								<li>Mis tahes ebõnnestunud OS install</li>
-							</ul>
-  							  Nendel juhtudel võiks DFU tegemisest kasu olla. Kui enam DFU tegemine ka ei aita, siis tuleks juba elektroonikud protsessi kaasata.
-							<br /><br />
-						</p>
+						          {/* Section title */}
+          <h1 className="text-4xl font-semibold mb-4">
+            Rituaalid enne elektroonikut
+          </h1>
+
+          {/* Intro paragraph */}
+          <p className="mb-4">
+            Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2-kiviga seade muutuda laibaks.  
+            Seda juhtub harva — kui DFU midagi korda teeb, siis on see üks ilus päev.
+          </p>
+
+          {/* Symptoms heading */}
+          <p className="font-semibold mb-2">
+            Tüüpilised sümptomid:
+          </p>
+
+          {/* Bulleted list */}
+          <ul className="list-disc list-inside text-base mb-4 space-y-1">
+            <li>Apple Silicon seadmel on käivitamisel hüüumärk ees</li>
+            <li>Seade läheb käima, aga pilti ette ei võta</li>
+            <li>Peale seerianumbri vahetust ainult 5 V</li>
+            <li>Mis tahes ebõnnestunud OS-install</li>
+          </ul>
+
+          {/* Closing paragraph */}
+          <p>
+            Nendel juhtudel võiks DFU tegemisest kasu olla. Kui enam DFU enam ei aita, tuleks juba elektroonikud protsessi kaasata.
+          </p>
 						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
 						<ul className="list-disc list-inside space-y-2">
 							<li><strong>Error 1:</strong> The trackpad is not connected (For successful firmware, the MacBook needs a connected working trackpad).</li>
