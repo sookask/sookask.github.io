@@ -144,8 +144,8 @@ export default function DFUPage() {
 							</table>
 						</div>
 						{/* Recovery-mode codes below the table */}
-						<div className="pt-6 space-y-2">
-							<h3 className="text-2xl font-semibold">
+						<div className="pt-4 space-y-2">
+							<h3 className="text-2xl font-regular">
 								Veakoodid Recoverysse bootimisel
 							</h3>
 							<ul className="list-disc list-inside text-base space-y-1 text-gray-700 dark:text-gray-300">
@@ -158,20 +158,10 @@ export default function DFUPage() {
 							</ul>
 						</div>
 					</section>
+
 					{/* Section 3 */}
 					<section className="space-y-4">
 						<h2 className="text-4xl font-semibold mb-4">
-							Veakoodid Recoverysse bootimisel
-						</h2>
-						<ul className="list-disc list-inside text-base space-y-1">
-							<li><strong>-2003F:</strong> Internetiühendus; proovida Thunderbolt-LAN adapterit.</li>
-							<li><strong>-1008F:</strong> iCloud/FMM lock; eemalda seade kontolt ja proovi uuesti.</li>
-						</ul>
-					</section>
-
-					{/* Section 4 */}
-					<section className="space-y-4">
-						<h2 className="text-2xl font-semibold mb-4">
 							Üldised näpunäited
 						</h2>
 						<ul className="list-disc list-inside text-base space-y-1">
