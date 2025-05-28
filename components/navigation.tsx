@@ -26,7 +26,7 @@ export function Navigation() {
   const routes: Route[] = [
     {
       href: "/",
-      label: "home",
+      label: "kodu",
       active: pathname === "/",
     },
 	{

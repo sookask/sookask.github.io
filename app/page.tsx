@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Mail, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/lib/translations"
 import { useEffect, useState } from "react"
@@ -61,7 +61,7 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-black dark:text-white max-w-[700px] mb-4 text-base font-light"
         >
-          In the labyrinth of logic boards, truth hides in the shadows of failed handshakes and silent rails.
+          Väike leheke, mis keskendub mäki tüüpvigadele ja praktiliste lahenduste leidmisele.
         </motion.p>
 
         <motion.div 
@@ -71,7 +71,7 @@ export default function Home() {
           className="mb-8 inline-flex items-center rounded-full border mt-2 px-4 py-1.5 text-sm font-medium bg-white/10 dark:bg-black/10 text-black dark:text-white border-black dark:border-white backdrop-blur-sm"
         >
           <Cpu className="mr-1.5 h-4 w-4" />
-          Firmware fails loud. Hardware fails quiet. Learn to hear both
+          scrap plaat on ühe vigase angle sensori kaugusel 
         </motion.div>
 
         <motion.div 
@@ -90,16 +90,8 @@ export default function Home() {
               <Github className="h-7 w-7" />
             </Link>
           </Button>
-          <Button 
-            asChild 
-            variant="outline" 
-            size="icon" 
-            className="rounded-full h-12 w-12 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-primary"
-          >
-            <Link href="https://www.linkedin.com/in/sookask/" target="_blank" aria-label="LinkedIn">
-              <Linkedin className="h-7 w-7" />
-            </Link>
-          </Button>
+
+
           <Button 
             asChild 
             variant="outline" 
