@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 	},
 }
 
-export default function MissionLayout({
+export default function DFULayout({
 	children,
 }: {
 	children: React.ReactNode

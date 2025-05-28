@@ -30,9 +30,9 @@ export function Navigation() {
       active: pathname === "/",
     },
 	{
-		href: "/mission",
-		label: "mission",
-		active: pathname === "/mission/",
+		href: "/dfu",
+		label: "dfu",
+		active: pathname === "/dfu/",
 	},
     {
       href: "/things",

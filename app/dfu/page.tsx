@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-export default function MissionPage() {
+export default function DFUPage() {
 	const [scrollY, setScrollY] = useState(0)
 
 	useEffect(() => {
