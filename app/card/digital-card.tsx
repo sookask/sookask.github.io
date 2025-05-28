@@ -96,7 +96,7 @@ export default function DigitalCard() {
               }}
             >
               <Image
-                src="/assets/images/alessio.jpeg"
+                src="/assets/images/bitmap.jpg"
                 alt="Profile picture"
                 fill
                 className="object-cover"
@@ -133,7 +133,7 @@ export default function DigitalCard() {
                   fill="currentColor"
                 />
               </svg>
-              <span className="truncate">Swift Student Challenge Winner 2025</span>
+              <span className="truncate">Test text</span>
             </div>
           </div>
 
