@@ -132,7 +132,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               }}
             >
               <ExternalLink className="mr-2 h-4 w-4" />
-              {project.link.startsWith("http") ? "Visit Project" : "View Project"}
+              {project.link.startsWith("http") ? "Mine lehele" : "Vaata projekti"}
             </Button>
           </div>
         )}

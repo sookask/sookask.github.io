@@ -2,11 +2,11 @@
 	{
 		"id": 12,
 		"title": "Mist",
-		"description": "Mist (macOS Installer Super Tool) on avatud lähtekoodiga rakendus, mis võimaldab Maci kasutajatel automaatselt alla laadida macOS-i installereid (.app, .dmg, .iso, .pkg) ja püsivara faile (.ipsw). See toetab nii Apple Silicon kui ka Intel Mac-arhitektuure ning võimaldab valida erinevate tarkvarakataloogide (sh arendaja- ja beetaversioonide) vahel.",
+		"description": "Mist (macOS Installer Super Tool) on rakendus, mis võimaldab alla laadida macOS-i installereid (.app, .dmg, .iso, .pkg) ja püsivara faile (.ipsw). Toetab nii Apple Silicon kui ka Intel seadmeid. Saab valida erinevate versioonide (sh dev- ja beetaversioonide) vahel.",
 		"link": "https://github.com/ninxsoft/Mist",
 		"type": "äpp",
-		"year": "2025",
-		"motivation": "tasuta macOS-i tööriist, mis võimaldab alla laadida erinevaid macOS-i installereid ja püsivara (sh vanemaid ja beetaversioone) nii Apple Silicon kui ka Intel Macidele.",
+		"year": "Tööriistad",
+		"motivation": "Tasuta macOS-i tööriist, mis võimaldab alla laadida erinevaid macOS-i installereid ja püsivara nii Apple Silicon kui ka Intel Macidele.",
 		"logoImage": "/assets/images/projects/mist.png"
 	},
 	{
@@ -15,7 +15,7 @@
 	  "description": "An educational iPad app designed to teach users the fundamentals of screenwriting. It features interactive lessons, live previews of scripts in proper screenplay format, and a free writing playground with support for Fountain Markdown.",
 	  "link": "/staff/screenplay-genie",
 	  "type": "application",
-	  "year": "2025",
+	  "year": "Tööriistad",
 	  "motivation": "Created to make screenwriting education accessible and interactive",
 	  "logoImage": "/assets/images/projects/ScreenplayGenie.png"
 	},

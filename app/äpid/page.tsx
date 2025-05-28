@@ -73,7 +73,7 @@ export default function ProjectsPage() {
 							transition={{ duration: 0.7, delay: 0.2 }}
 							className="text-muted-foreground max-w-[700px] mb-8 text-lg"
 						>
-							Things I'm making to fix problems, explore ideas, or scratch my own itch.
+							Äpid, mis minu arust võiks tehniku igapäevatöö lihtsamaks ja kiiremaks muuta.
             			</motion.p>
           			</motion.div>
 
