@@ -57,8 +57,8 @@ export default function DFUPage() {
 						transition={{ duration: 0.7, delay: 0.3 }}
 						className="text-lg leading-relaxed space-y-6 text-left text-gray-900 dark:text-gray-100"
 					>
-						<h1 className="text-2xl font-semibold">DFU Mode and Troubleshooting</h1>
-						<p>To check if the device is in DFU state, check voltage on SOC_DFU_STATUS. It should be 1.8V if T2 is in DFU mode.</p>
+						<h1 className="text-2xl font-semibold">Rituaalid enne mahakandmist</h1>
+						<p>Tere tulemast Maci hauakambrisse. Kui seade on black dull screen ja üles ei booti, jääb järele vaid DFU.. Siia on kogutud näpunäited ja vead, mis viitavad ülekuumenevatele NANDidele, katkistele vooluahelatele, surevale RAMile ja korruptsioonile sügaval süsteemikonfiguratsioonis. Revive? Vaevalt. Restore? Ilmselgelt.</p>
 						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
 						<ul className="list-disc list-inside space-y-2">
 							<li><strong>Error 1:</strong> The trackpad is not connected (For successful firmware, the MacBook needs a connected working trackpad).</li>
