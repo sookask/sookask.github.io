@@ -59,11 +59,12 @@ export default function DFUPage() {
 					>
 						<h1 className="text-4xl font-semibold">Rituaalid enne mahakandmist</h1>
 						<p>
-  							Tere tulemast Maci hauakambrisse. Kui seade on black dull screen ja üles ei booti, jääb järele vaid DFU.
-  							<br /><br />
+  							Kui seade on black dull screen ja üles ei booti, jääb järele vaid DFU.
+  							<br />
   							Siia on kogutud näpunäited ja vead, mis viitavad ülekuumenevatele NANDidele, katkistele vooluahelatele, surevale RAMile ja korruptsioonile sügaval süsteemikonfiguratsioonis.
-  							<br /><br />
+  							<br />
   							Revive? Vaevalt. Restore? Ilmselgelt.
+							<br /><br />
 						</p>
 						<h3 className="text-xl font-semibold">Common DFU Errors and Meanings</h3>
 						<ul className="list-disc list-inside space-y-2">
