@@ -30,7 +30,7 @@ export default function DFUPage() {
 						transition={{ duration: 0.7, delay: 0.1 }}
 						className="text-3xl font-medium tracking-tighter sm:text-4xl md:text-5xl mb-8"
 					>
-						DFU Mode Restore (Macs)
+						DFU ja Maci elustamine
 					</motion.h1>
 					<motion.div
 						initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
@@ -47,7 +47,7 @@ export default function DFUPage() {
 							priority
 						/>
 						<p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
-							Mac with Apple silicon or the Apple T2 Security Chip might stop responding and need its firmware to be revived or restored by another Mac.
+							Hüüumärk Apple Silicon seadmel on lahendatav ainult DFU-režiimi kaudu.
 						</p>
 					</motion.div>
 				</motion.div>
@@ -63,7 +63,7 @@ export default function DFUPage() {
 					{/* Section 1 */}
 					<section className="space-y-4">
 						<h1 className="text-4xl font-semibold mb-4">
-							Rituaalid enne elektroonikut
+							Sümptomid enne surnukuuri
 						</h1>
 						<p className="mb-4">
 							Kui Maci püsivara vajab taastamist või elustamist, võib Apple Siliconi või T2 kiviga seade muutuda laibaks. Seda juhtub harva, kui DFU midagi korda teeb aga kui teeb siis on see üks ilus päev. Tüüpilised sümptomid:

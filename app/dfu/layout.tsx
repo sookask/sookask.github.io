@@ -1,24 +1,24 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-	title: "DFU mode | sookask",
-	description: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
+	title: "DFU info | sookask",
+	description: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 	openGraph: {
-		title: "DFU mode | sookask",
-		description: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
+		title: "DFU info | sookask",
+		description: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 		images: [
 			{
 				url: "/assets/images/Do-not-reflow-t2.png",
 				width: 1200,
 				height: 800,
-				alt: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
+				alt: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "DFU mode | sookask",
-		description: "Do not ever reflow T2 or any other chips, even if you seen someone did it and it magically worked.",
+		title: "DFU info | sookask",
+		description: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 		images: ["/assets/images/Do-not-reflow-t2.png"],
 	},
 }
