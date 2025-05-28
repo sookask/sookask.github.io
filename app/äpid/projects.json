@@ -25,7 +25,7 @@
 	  "description": "A comprehensive Swift package that implements binary session types, providing a robust framework for ensuring safe and structured communication in concurrent systems.",
 	  "link": "https://github.com/alessiorubicini/SwiftSessions",
 	  "type": "package",
-	  "year": "2024",
+	  "year": "Tööriistad",
 	  "motivation": "Created to advance the field of concurrent programming through type-safe communication",
 	  "logoImage": "/assets/images/projects/SwiftSessions.png"
 	},
@@ -35,7 +35,7 @@
 		"description": "A web platform for the Digital Communication and Marketing course by Professor Ugo Esposito at the University of Camerino. A Classroom-style platform where students can get to know each other, form groups, collaborate, and manage the entire experience of the Digital Garage project group.",
 		"link": "https://digitalgarage.unicam.it",
 		"type": "application",
-		"year": "2024",
+		"year": "Tööriistad",
 		"motivation": "Built to enhance student collaboration",
 		"logoImage": "/assets/images/projects/digitalgarage.png"
 	},
@@ -46,7 +46,7 @@
 		"technologies": ["Swift", "SwiftUI", "PencilKit"],
 		"link": "https://github.com/alessiorubicini/PencilDrawerForSwiftUI",
 		"type": "package",
-		"year": "2023",
+		"year": "Minu tehtud",
 		"motivation": "Created to simplify drawing integration in SwiftUI apps",
 		"logoImage": "/assets/images/projects/PencilDrawer.png"
 	},
@@ -57,7 +57,7 @@
 		"technologies": ["Java", "Apache Jena", "OWL"],
 		"link": "https://github.com/alessiorubicini/ExoplanetCataloguer",
 		"type": "application",
-		"year": "2023",
+		"year": "Minu tehtud",
 		"motivation": "Developed to assist astronomers in organizing exoplanet research",
 		"logoImage": "/assets/images/projects/exoplanet-cataloguer.png"
 	},
@@ -67,7 +67,7 @@
 		"description": "A SwiftUI package providing an interactive view for selecting geographic coordinates. It allows users to select a location on a map, with real-time coordinate display and easy integration via SwiftUI bindings.",
 		"link": "https://github.com/alessiorubicini/LocationPickerForSwiftUI",
 		"type": "package",
-		"year": "2021",
+		"year": "Tööriistad",
 		"motivation": "Built to simplify location selection in SwiftUI apps",
 		"logoImage": "/assets/images/projects/LocationPicker.png"
 	},
@@ -77,7 +77,7 @@
 		"description": "A SwiftUI package that provides an easy-to-use picker for selecting SF Symbols in iOS and macOS apps. It supports seamless symbol selection with binding integration and customization options.",
 		"link": "https://github.com/alessiorubicini/SFSymbolsPickerForSwiftUI",
 		"type": "package",
-		"year": "2021",
+		"year": "Tööriistad",
 		"motivation": "Created to make SF Symbols selection more intuitive",
 		"logoImage": "/assets/images/projects/SFSymbolsPicker.png"
 	},
@@ -88,7 +88,7 @@
 		"technologies": ["Swift", "SwiftUI"],
 		"link": "https://github.com/alessiorubicini/IslandAlertsForSwiftUI",
 		"type": "package",
-		"year": "2022",
+		"year": "Tööriistad",
 		"motivation": "Developed to enhance Dynamic Island integration in SwiftUI apps",
 		"logoImage": "/assets/images/projects/IslandAlerts.png"
 	},
@@ -98,7 +98,7 @@
 	  "description": "An iOS client-side app for a board game e-commerce store. The app allows a complete customer-seller interaction with registration, catalog consultation, purchase and order tracking. Created as a project for my high school final exam.",
 	  "link": "https://github.com/alessiorubicini/GameZen-iOS",
 	  "type": "application",
-	  "year": "2021",
+	  "year": "2Tööriistad1",
 	  "motivation": "Built as my first iOS app",
 	  "logoImage": "/assets/images/projects/GameZen.png"
 	}
