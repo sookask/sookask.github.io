@@ -57,7 +57,7 @@ export default function DFUPage() {
 					initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
 					animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 					transition={{ duration: 0.7, delay: 0.3 }}
-					className="text-gray-900 dark:text-gray-100 leading-relaxed space-y-12"
+					className="text-gray-900 dark:text-gray-100 leading-relaxed space-y-14"
 				>
 
 					{/* Section 1 */}
@@ -84,7 +84,7 @@ export default function DFUPage() {
 						<h2 className="text-4xl font-semibold mb-4">
 							Teadaolevad veakoodid ja tähendused
 						</h2>
-						<ul className="list-none space-y-4 text-base">
+						<ul className="list-disc list-inside text-base space-y-1 mb-4">
 							<li><strong>1:</strong> Trackpad ei ole ühendatud; püsivara taastamiseks peab olema trackpad ühendatud.</li>
 							<li><strong>6:</strong> SSD viga: BridgeOS ei suuda kirjutada. Võimalik kuum NAND.</li>
 							<li><strong>9:</strong> Toiteviga (NAND/RAM/SEP ROM mismatch).</li>
@@ -105,7 +105,7 @@ export default function DFUPage() {
 
 					{/* Section 3 */}
 					<section className="space-y-4">
-						<h2 className="text-2xl font-semibold mb-4">
+						<h2 className="text-4xl font-semibold mb-4">
 							Veakoodid Recoverysse bootimisel
 						</h2>
 						<ul className="list-disc list-inside text-base space-y-1">
