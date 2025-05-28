@@ -85,6 +85,11 @@ export default function DFUPage() {
 							Teadaolevad veakoodid ja tähendused
 						</h2>
 
+						{/* Intro */}
+						<p className="mb-4">
+							Tahest tahtmata võivad DFU protsessi käigus tekkida veakoodid, mis võivad olla segadust tekitavad. Siin on nimekiri teadaolevatest veakoodidest ja nende tähendustest:
+						</p>
+
 						<div className="overflow-x-auto">
 							<table className="w-full text-left border-collapse">
 								{/* Table header */}
@@ -138,8 +143,21 @@ export default function DFUPage() {
 								</tbody>
 							</table>
 						</div>
+						{/* Recovery-mode codes below the table */}
+						<div className="pt-6 space-y-2">
+							<h3 className="text-2xl font-semibold">
+								Veakoodid Recoverysse bootimisel
+							</h3>
+							<ul className="list-disc list-inside text-base space-y-1 text-gray-700 dark:text-gray-300">
+								<li>
+									<strong>2003F:</strong> Kehv internetiühendus, proovi Thunderbolt-LAN adapterit.
+								</li>
+								<li>
+									<strong>1008F:</strong> Viitab iCloud lukule. Kontrolli seerianumbrit checkmendiga.
+								</li>
+							</ul>
+						</div>
 					</section>
-
 					{/* Section 3 */}
 					<section className="space-y-4">
 						<h2 className="text-4xl font-semibold mb-4">
