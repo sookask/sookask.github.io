@@ -74,11 +74,11 @@ export default function DFUPage() {
 							<li>Peale seerianumbri vahetust ainult 5V</li>
 							<li>Mis tahes ebõnnestunud OS-install</li>
 						</ul>
-						<p className="text-lg">
+						<p className="mb-4">
 							Nendel juhtudel võiks DFU tegemisest kasu olla. Kui DFU enam ei aita, tuleks juba elektroonikud protsessi kaasata.
 						</p>
 					</section>
-					<br /><br />
+					<br />
 
 					{/* Section 2 */}
 					<section className="space-y-6 mb-8">
