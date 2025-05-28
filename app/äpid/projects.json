@@ -1,19 +1,19 @@
 [
 	{
 		"id": 12,
-		"title": "EcoGPT",
-		"description": "A macOS menu bar application that helps users track and understand the environmental impact of their ChatGPT usage. By monitoring your prompts in real-time, EcoGPT provides immediate feedback on the carbon footprint of your AI interactions.",
-		"link": "https://github.com/alessiorubicini/EcoGPT",
-		"type": "application",
+		"title": "Mist",
+		"description": "macOS Installer Super Tool. Mac tööriist, mis laeb automaatselt alla macOS püsivara ja tarkvara. Ka vanemaid versioone",
+		"link": "https://github.com/ninxsoft/Mist",
+		"type": "äpp",
 		"year": "2025",
-		"motivation": "Built to raise awareness about AI's environmental impact",
-		"logoImage": "/assets/images/projects/ecogpt.png"
+		"motivation": "macOS Installer tööriist, mis võimaldab alla laadida igasuguseid macOS versioone.",
+		"logoImage": "/assets/images/projects/mist.png"
 	},
 	{
 	  "id": 1,
 	  "title": "Screenplay Genie",
 	  "description": "An educational iPad app designed to teach users the fundamentals of screenwriting. It features interactive lessons, live previews of scripts in proper screenplay format, and a free writing playground with support for Fountain Markdown.",
-	  "link": "/things/screenplay-genie",
+	  "link": "/staff/screenplay-genie",
 	  "type": "application",
 	  "year": "2025",
 	  "motivation": "Created to make screenwriting education accessible and interactive",

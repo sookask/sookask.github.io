@@ -35,9 +35,9 @@ export function Navigation() {
 		active: pathname === "/dfu/",
 	},
     {
-      href: "/things",
-      label: "things",
-      active: pathname === "/things/" || pathname.startsWith("/things/"),
+      href: "/äpid",
+      label: "äpid",
+      active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
 	{
 		href: "https://alessiorubicini.substack.com/",
