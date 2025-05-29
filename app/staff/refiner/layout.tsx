@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useEffect } from "react"
 
-export default function ScreenplayGenieLayout({
+export default function refinerLayout({
   children,
 }: {
   children: React.ReactNode
@@ -12,13 +12,13 @@ export default function ScreenplayGenieLayout({
   // Add a class to the html element for this specific layout
   useEffect(() => {
     // Add class for smooth scrolling
-    document.documentElement.classList.add("screenplay-genie-page")
+    document.documentElement.classList.add("refiner-page")
 
     // Hide the navbar by adding a class to the body
     document.body.classList.add("hide-navbar")
 
     return () => {
-      document.documentElement.classList.remove("screenplay-genie-page")
+      document.documentElement.classList.remove("refiner-page")
       document.body.classList.remove("hide-navbar")
     }
   }, [])

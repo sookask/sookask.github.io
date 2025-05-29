@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
-export default function ScreenplayGeniePage() {
+export default function RefinerPage() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -35,8 +35,8 @@ export default function ScreenplayGeniePage() {
             className="relative w-24 h-24 mb-8"
           >
             <Image
-              src="/assets/images/projects/ScreenplayGenie.png"
-              alt="Screenplay Genie App Icon"
+              src="/assets/images/projects/refiner.png"
+              alt="refiner App Icon"
               fill
               className="object-contain drop-shadow-lg"
             />
@@ -47,7 +47,7 @@ export default function ScreenplayGeniePage() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-medium tracking-tighter sm:text-4xl md:text-5xl mb-4"
           >
-            Screenplay Genie
+            refiner
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +140,7 @@ export default function ScreenplayGeniePage() {
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <div className="relative aspect-[4/3] w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/assets/images/projects/screenplay-genie.png"
+                  src="/assets/images/projects/refiner.png"
                   alt="Screenplay Genie"
                   fill
                   className="object-contain"
@@ -227,7 +227,7 @@ export default function ScreenplayGeniePage() {
               </p>
               <Button asChild className="rounded-full">
                 <Link
-                  href="https://github.com/alessiorubicini/Screenplay-Genie"
+                  href="https://github.com/sookask/refiner"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
