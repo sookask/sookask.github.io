@@ -16,18 +16,18 @@
 	  "link": "/staff/screenplay-genie",
 	  "type": "application",
 	  "year": "Tööriistad",
-	  "motivation": "Created to make screenwriting education accessible and interactive",
+	  "motivation": "DFU Blaster on tööriist, mis võimaldab Apple Silicon ja Intel seadmed nupuvajutusega DFU režiimi viia.",
 	  "logoImage": "/assets/images/projects/ScreenplayGenie.png"
 	},
 	{
 	  "id": 2,
-	  "title": "Swift Sessions",
-	  "description": "A comprehensive Swift package that implements binary session types, providing a robust framework for ensuring safe and structured communication in concurrent systems.",
-	  "link": "https://github.com/alessiorubicini/SwiftSessions",
-	  "type": "package",
+	  "title": "DFU Blaster",
+	  "description": "DFU Blaster tööriist, mis lihtsustab Apple Silicon ja Intel arvutite viimist DFU režiimi. Traditsiooniliselt nõuab DFU režiimi viimine keerulisi klahvikombinatsioone ja täpset ajastust, kuid DFU Blaster võimaldab seda teha ühe nupuvajutusega. Toimib ainult Apple Silicon tööarvutitega.",
+	  "link": "https://twocanoes.com/products/mac/dfu-blaster/",
+	  "type": "äpp",
 	  "year": "Tööriistad",
 	  "motivation": "Created to advance the field of concurrent programming through type-safe communication",
-	  "logoImage": "/assets/images/projects/SwiftSessions.png"
+	  "logoImage": "/assets/images/projects/dfublaster.png"
 	},
 	{
 		"id": 10,
