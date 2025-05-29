@@ -160,8 +160,8 @@ export default function DFUPage() {
 										Veakoodid Recoverysse bootimisel
 									</AlertTitle>
 									<AlertDescription className="text-base font-light mt-2 text-black dark:text-white leading-relaxed">
-										<strong>2003F:</strong> Kehv internetiühendus, proovi Thunderbolt-LAN adapterit.
-										<strong>1008F:</strong> Viitab iCloud lukule. Kontrolli seerianumbrit checkmendiga.
+										<p><strong>2003F:</strong> Kehv internetiühendus, proovi Thunderbolt-LAN adapterit.</p>
+										<p><strong>1008F:</strong> Viitab iCloud lukule. Kontrolli seerianumbrit checkmendiga.</p>
 									</AlertDescription>
 								</div>
 							</Alert>
