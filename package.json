@@ -60,6 +60,8 @@
     "next-sitemap": "^4.2.3",
     "next-themes": "latest",
     "react": "^19.1.0",
+    "react-confetti": "^6.4.0",
+    "react-confetti-boom": "^2.0.1",
     "react-day-picker": "^9.6.3",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.54.1",
