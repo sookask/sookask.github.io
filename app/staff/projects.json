@@ -15,7 +15,7 @@
 	  "description": "refiner on tehnikutele mõeldud macOS-i tööriist, mis võimaldab luua ehtsad Mac seadmete seerianumbreid. See on lahendus tehnikutele, kes vajavad seerianumbreid oma tööprotsessides.",
 	  "link": "/staff/refiner",
 	  "type": "äpp",
-	  "year": "Minu tehtud",
+	  "year": "Kodukootud",
 	  "motivation": "refiner on macOS-i rakendus, mis võimaldab kiiresti genereerida kehtiva formaadiga Mac seadmete seerianumbreid.",
 	  "logoImage": "/assets/images/projects/refiner.png"
 	},
@@ -51,54 +51,43 @@
 	},
 	{
 		"id": 11,
-		"title": "Exoplanet Cataloguer",
-		"description": "A Java application designed to help astronomy researchers manage and classify their own catalogs of exoplanets. Built around a custom OWL-DL ontology and powered by Apache Jena and the Pellet reasoner, it infers useful data such as planetary classification, composition, potential habitability, and stellar types.",
-		"technologies": ["Java", "Apache Jena", "OWL"],
-		"link": "https://github.com/alessiorubicini/ExoplanetCataloguer",
-		"type": "application",
-		"year": "Minu tehtud",
-		"motivation": "Developed to assist astronomers in organizing exoplanet research",
-		"logoImage": "/assets/images/projects/exoplanet-cataloguer.png"
+		"title": "Triloboot",
+		"description": "Bootitav USB-pulk, mis sisaldab kolme peamist süsteemi: testimiseks mõeldud Debianipõhine kohandatud operatsioonisüsteem, Smart tööriist ning Aikeni keskkond, mis võimaldab seadmeid testida. Kõik komponendid on GRUB-menüüs kiiresti ligipääsetavad.",
+		"link": "https://github.com/sookask/triloboot",
+		"type": "USB pulk",
+		"year": "Kodukootud",
+		"motivation": "GRUB põhine USB bootloader, mis võimaldab bootida ühe pulga pealt testOS-i, Smarti ja ja Aikenit",
+		"logoImage": "/assets/images/projects/triloboot.png"
 	},
 	{
 		"id": 5,
-		"title": "Location Picker for SwiftUI",
-		"description": "A SwiftUI package providing an interactive view for selecting geographic coordinates. It allows users to select a location on a map, with real-time coordinate display and easy integration via SwiftUI bindings.",
+		"title": "MDR",
+		"description": "Bootitav USB-pulk, mis otsib SMBIOS-ist riistvara infot ja muudab kellaaja ja kuupäeva õigeks. See on mõeldud eelkõige Lenovo seadmete jaoks, millel on vale kellaaeg ja kuupäev pärast riistvara info muudatusi.",
 		"link": "https://github.com/alessiorubicini/LocationPickerForSwiftUI",
-		"type": "package",
-		"year": "Tööriistad",
-		"motivation": "Built to simplify location selection in SwiftUI apps",
-		"logoImage": "/assets/images/projects/LocationPicker.png"
+		"type": "USB pulk",
+		"year": "Kodukootud",
+		"motivation": "MDR on mõeldud eelkõige Lenovo seadmete jaoks, millel on vale kellaaeg ja kuupäev pärast riistvara info muudatusi.",
+		"logoImage": "/assets/images/projects/mdr.png"
 	},
 	{
 		"id": 4,
-		"title": "SF Symbols Picker for SwiftUI",
-		"description": "A SwiftUI package that provides an easy-to-use picker for selecting SF Symbols in iOS and macOS apps. It supports seamless symbol selection with binding integration and customization options.",
-		"link": "https://github.com/alessiorubicini/SFSymbolsPickerForSwiftUI",
-		"type": "package",
+		"title": "balenaEtcher",
+		"description": "balenaEtcher (tuntud ka kui Etcher) on tööriist, mis on loodud operatsioonisüsteemide (.iso, .img, .zip) kirjutamiseks kõvaketastele ja USB-mälupulkadele. See on saadaval Windowsi, macOS-i ja Linuxi süsteemidele.",
+		"link": "https://etcher.balena.io",
+		"type": "äpp",
 		"year": "Tööriistad",
-		"motivation": "Created to make SF Symbols selection more intuitive",
-		"logoImage": "/assets/images/projects/SFSymbolsPicker.png"
+		"motivation": "balenaEtcher on tööriist, mis võimaldab kiiresti kloonida kettaid või kirjutada USB-pulkasid.",
+		"logoImage": "/assets/images/projects/balena.png"
 	},
 	{
 		"id": 6,
-		"title": "Island Alerts for SwiftUI",
-		"description": "A SwiftUI package offering various alert styles designed to integrate smoothly with the iPhone's Dynamic Island and Notch. It provides customizable alerts like large, medium, and square sizes for Dynamic Island, and similar options for the Notch.",
+		"title": "snifr",
+		"description": "macOS rakendus, mis leiab USB-ga ühendatud seadmeid ja kuvab nende seerianumbrid. See aitab tehnikutel tuvastada seadmeid ja nende seerianumbreid, et lihtsustada seadmete hooldust ja remonti. See kaotab vajaduse kivid maha joota seerianumbrite leidmiseks.",
 		"technologies": ["Swift", "SwiftUI"],
-		"link": "https://github.com/alessiorubicini/IslandAlertsForSwiftUI",
-		"type": "package",
-		"year": "Tööriistad",
-		"motivation": "Developed to enhance Dynamic Island integration in SwiftUI apps",
-		"logoImage": "/assets/images/projects/IslandAlerts.png"
-	},
-	{
-	  "id": 7,
-	  "title": "GameZen",
-	  "description": "An iOS client-side app for a board game e-commerce store. The app allows a complete customer-seller interaction with registration, catalog consultation, purchase and order tracking. Created as a project for my high school final exam.",
-	  "link": "https://github.com/alessiorubicini/GameZen-iOS",
-	  "type": "application",
-	  "year": "2Tööriistad1",
-	  "motivation": "Built as my first iOS app",
-	  "logoImage": "/assets/images/projects/GameZen.png"
+		"link": "https://github.com/sookask/snifr",
+		"type": "äpp",
+		"year": "Kodukootud",
+		"motivation": "macOS-i rakendus, mis tuvastab USB-ga ühendatud seadmed ja kuvab nende seerianumbrid, et aidata tehnikuid seadmete identifitseerimisel.",
+		"logoImage": "/assets/images/projects/snifr.png"
 	}
 ]
