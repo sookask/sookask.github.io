@@ -180,7 +180,7 @@ export default function DFUPage() {
 							className="w-full mb-12"
 						>
 							<Image
-								src="/assets/images/liquid-trackpad.jpeg"
+								src="/assets/images/liquid-trackpad.jpg"
 								alt="Liquid damage trackpad"
 								width={1480}
 								height={386}
