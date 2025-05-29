@@ -4,13 +4,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { Github, Mail, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useTranslation } from "@/lib/translations"
 import { useEffect, useState } from "react"
 import { Cpu } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Home() {
-  const { t } = useTranslation()
   const [mounted, setMounted] = useState(false)
 
   // Ensure component is mounted before rendering to avoid hydration issues

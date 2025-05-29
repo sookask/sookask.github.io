@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { ChevronRight, Home } from "lucide-react"
-import { useTranslation } from "@/lib/translations"
 
 interface BreadcrumbProps {
   items: {
@@ -12,7 +11,6 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
-  const { t } = useTranslation()
 
   return (
     <nav className="flex items-center space-x-1 text-sm text-muted-foreground mb-6">

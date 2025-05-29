@@ -1,14 +1,12 @@
 "use client"
 
-import { useTranslation } from "@/lib/translations"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Info, ArrowRight } from "lucide-react"
 
-export default function StoryPage() {
-  const { t } = useTranslation()
+export default function SuggestionsPage() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -34,7 +32,7 @@ export default function StoryPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl mb-4"
           >
-            my journey.
+            näpunäited.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
@@ -42,16 +40,16 @@ export default function StoryPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-muted-foreground max-w-[700px] mb-8 text-lg"
           >
-            A timeline of how I've grown by building, learning, and getting things wrong.
+            Mõned näpunäited ja tüüpvead, mis on aidanud mind tehnikuna.
           </motion.p>
         </motion.div>
 
         <div className="relative mt-2">
-          {/* Timeline line */}
+          {/* Suggestions timeline */}
           <div className="absolute left-4 top-0 bottom-0 w-px bg-border" />
 
           <div className="space-y-12">
-            {/* Swift Student Challenge */}
+            {/* Faulty touchbar */}
             <motion.div
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -62,15 +60,16 @@ export default function StoryPage() {
                 <div className="w-2 h-2 rounded-full bg-foreground" />
               </div>
               <div>
-                <h2 className="text-xl font-normal">Apple Swift Student Challenge Winner</h2>
-                <span className="text-sm text-muted-foreground block mt-1">April 2025</span>
+                <h2 className="text-xl font-normal">TouchBar ei tule üles bootides nähtavale</h2>
+                <span className="text-sm text-muted-foreground block mt-1">Kõik touchbariga masinad</span>
                 <p className="mt-2 text-black dark:text-white">
-                  Won Apple's Swift Student Challenge with an interactive iPad app for learning screenwriting, earning a ticket to WWDC25 and recognition for innovative educational technology.
+                  Seda on näha eelkõige WFP seadmetel, millele on tellitud ka Touchbar. Kui peaks tekkima selline masin siis kindlasti kontrollida, kas sellel on küljes refurbitud ekraan.
+                  Mingil põhjusel ei tule refurbitud ekraaniga masinatel TouchBar nähtavale bootides. Kiire diagnostika oleks proovida testekraaniga touchbari tööd.
                 </p>
               </div>
             </motion.div>
 
-            {/* Master's Degree */}
+            {/* Black/dull screen */}
             <motion.div
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -81,10 +80,11 @@ export default function StoryPage() {
                 <div className="w-2 h-2 rounded-full bg-foreground" />
               </div>
               <div>
-                <h2 className="text-xl font-normal">Master's in Computer Science</h2>
-                <span className="text-sm text-muted-foreground block mt-1">September 2024</span>
+                <h2 className="text-xl font-normal">Black/dull screen</h2>
+                <span className="text-sm text-muted-foreground block mt-1">Apple Silicon seadmed</span>
                 <p className="mt-2 text-black dark:text-white">
-                  Starting advanced studies in Software Development & Technologies at the University of Camerino.
+                  Seadmed, mis justkui tunduvad olevat probleemideta, kuid ekraan on pime või tuhm viitavad Angle sensori probleemile.
+                  Kontrolli kas trackpad klikib. Sellise seadme puhul ühenda angle sensor lahti ja proovi uuesti.
                 </p>
               </div>
             </motion.div>

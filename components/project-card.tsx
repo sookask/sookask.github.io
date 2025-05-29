@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { useTranslation } from "@/lib/translations"
 import Image from "next/image"
 
 interface Project {
@@ -23,7 +22,6 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
-  const { t } = useTranslation()
 
   const isLocalLink = project.link && !project.link.startsWith("http")
 

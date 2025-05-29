@@ -1,11 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTranslation } from "@/lib/translations"
 import { useEffect, useState } from "react"
 
 export default function NowPage() {
-	const { t } = useTranslation()
 	const [mounted, setMounted] = useState(false)
 	
 	useEffect(() => {

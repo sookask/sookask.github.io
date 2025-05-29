@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { useTranslation } from "@/lib/translations"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 type Route = {
@@ -21,7 +20,6 @@ type Route = {
 export function Navigation() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
-  const { t } = useTranslation()
 
   const routes: Route[] = [
     {
@@ -39,16 +37,10 @@ export function Navigation() {
       label: "staff",
       active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
-	{
-		href: "https://alessiorubicini.substack.com/",
-		label: "words",
-		active: false,
-		external: true,
-	  },
     {
-      href: "/journey",
-      label: "journey",
-      active: pathname === "/journey/",
+      href: "/tugiliin",
+      label: "tugiliin",
+      active: pathname === "/tugiliin/",
     },
 	{
 		href: "/now",
