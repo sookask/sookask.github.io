@@ -101,7 +101,7 @@ export default function SuggestionsPage() {
               </div>
               <div>
                 <h2 className="text-xl font-normal">Vigane angle sensor</h2>
-                <span className="text-sm text-muted-foreground block mt-1">March - May 2024</span>
+                <span className="text-sm text-muted-foreground block mt-1">Apple Silicon seadmed</span>
                 <p className="mt-2 text-black dark:text-white">
                   Kui reservis angle sensorid otsas aga tunned end jootejaama taga julgelt siis võid proovida tõsta vanalt sensorit kivi ümber teisele sensorile.
                   Kui kõik õigesti teed siis ei pea seade WFP-sse minema.

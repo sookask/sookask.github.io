@@ -34,7 +34,7 @@ export function Navigation() {
 	},
     {
       href: "/staff",
-      label: "staff",
+      label: "äpid",
       active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
     {
@@ -43,9 +43,9 @@ export function Navigation() {
       active: pathname === "/tugiliin/",
     },
 	{
-		href: "/now",
-		label: "now",
-		active: pathname === "/now/",
+		href: "/t2",
+		label: "t2",
+		active: pathname === "/t2/",
 		
 	  }
   ]
