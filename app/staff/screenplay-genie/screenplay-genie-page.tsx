@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
-export default function RefinerPage() {
+export default function ScreenplayGeniePage() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -35,8 +35,8 @@ export default function RefinerPage() {
             className="relative w-24 h-24 mb-8"
           >
             <Image
-              src="/assets/images/projects/refiner.png"
-              alt="refiner App Icon"
+              src="/assets/images/projects/ScreenplayGenie.png"
+              alt="Screenplay Genie App Icon"
               fill
               className="object-contain drop-shadow-lg"
             />
@@ -47,7 +47,7 @@ export default function RefinerPage() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-medium tracking-tighter sm:text-4xl md:text-5xl mb-4"
           >
-            refiner
+            Screenplay Genie
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,8 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground max-w-[700px] mb-8 text-lg leading-relaxed"
           >
-            SwiftUI rakendus, mis aitab tehnikutel luua seerianumbreid ja hoida peal genereeritud seerianumbritel.
+            An educational iPad app designed to guide users through the fundamentals of screenwriting in an interactive
+            and engaging way.
           </motion.p>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +64,7 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-flex items-center px-4 py-2 text-sm font-medium tracking-wide uppercase border border-black dark:border-white bg-transparent text-black dark:text-white rounded-3xl"
           >
-            Genereerib Mac seadmetele seerianumbreid
+            WWDC25 Swift Student Challenge Winner
           </motion.p>
         </motion.div>
 
@@ -74,18 +75,18 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-3xl font-medium tracking-tight">Põhimõte</h2>
+              <h2 className="text-3xl font-medium tracking-tight">The Idea</h2>
               <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800"></div>
             </div>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                <strong>Mis inspireeris selle rakenduse loomist?</strong> Aegade algusest oleme rakendanud seerianumbritele
-                kolmanda sümboli muutmist. Sedasi oli võimalik seerianumber ära muuta, kuid probleem oli selles, et
-                seade võis tunnistada end hoopis millegi muuna.
+                <strong>Ever dreamed of writing a movie?</strong> Many aspiring writers are intimidated by the complex formatting
+                rules and structure required for professional screenplays. Traditional screenwriting software can be
+                overwhelming and difficult to learn.
               </p>
               <p>
-                refiner ongi loodud selleks, et seda probleemi vältida ning iga seade saaks ka korrapärase seerianumbri,
-                mis vastaks seadme tüübile ja mudelile.
+                Screenplay Genie was designed to solve this problem by creating an educational experience that makes
+                learning screenwriting fundamentals accessible, interactive, and enjoyable for everyone.
               </p>
             </div>
           </motion.section>
@@ -96,32 +97,32 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-3xl font-medium tracking-tight">Mida see teeb?</h2>
+              <h2 className="text-3xl font-medium tracking-tight">Key Features</h2>
               <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800"></div>
             </div>
             <ul className="space-y-6">
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 font-medium">•</span>
                 <div>
-                  <strong>Genereerib seerianumbrid:</strong> Võimaldab kasutajal lihtsasti genereerida seerianumbri seda vajavale seadmele.
+                  <strong>Interactive Lessons:</strong> Learn screenplay formatting and structure step by step through engaging mini-lessons focused on key screenplay elements.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 font-medium">•</span>
                 <div>
-                  <strong>Lai mudelivalik:</strong> Peaaegu kõik seadmed on toetatud, sealhulgas iMacid ja Mac minid.
+                  <strong>Live Preview:</strong> See your script transform into a properly formatted screenplay in real-time, helping you understand professional styling.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 font-medium">•</span>
                 <div>
-                  <strong>Kasutajasõbralik:</strong> Võimaldab nupuvajutusega kopeerida lõikelauale. Kuvab QR-koodi, mida saab kiirelt skaneerida teise arvutiga.
+                  <strong>Free Playground:</strong> Apply what you've learned in an unrestricted writing environment where you can create scenes and develop dialogue.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 font-medium">•</span>
                 <div>
-                  <strong>Graafiline ajalugu:</strong> Kuvab detailse ülevaate kõigist genereeritud seerianumbritest, sealhulgas seadme tüübist ja mudelist.
+                  <strong>Fountain Markdown:</strong> Use the industry-standard lightweight markup language for screenwriting that's both powerful and easy to learn.
                 </div>
               </li>
             </ul>
@@ -133,13 +134,13 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-3xl font-medium tracking-tight">Äpp</h2>
+              <h2 className="text-3xl font-medium tracking-tight">The Application</h2>
               <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800"></div>
             </div>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <div className="relative aspect-[4/3] w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/assets/images/projects/refiner.png"
+                  src="/assets/images/projects/screenplay-genie.png"
                   alt="Screenplay Genie"
                   fill
                   className="object-contain"
@@ -149,15 +150,65 @@ export default function RefinerPage() {
               </div>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
-                  Lisaks seerianumbrite genereerimisele, võimaldab refiner ka seadmete seerianumbrite eksportimist. See annab võimaluse
-                  aasta jooksul genereeritud seerianumbrid kokku võtta ja analüüsida, kui palju see tulu tõi.
+                  Screenplay Genie guides users through a series of mini-lessons, each focusing on a key screenplay
+                  element. After a quick explanation, users put their knowledge into practice by writing in Fountain
+                  Markdown.
                 </p>
                 <p>
-                  Rakendusse on lisatud ka info Mac seadmete tüüpvigade kohta, mis aitavad tehnikutel mõista, millised
-                  seadmed võivad vajada erilist tähelepanu või parandusmeetmeid. See teave on kasulik, et vältida tulevikus probleeme ja
-                  tagada seadmete pikk eluiga.
+                  As users type, the Live Preview feature instantly transforms their text into a properly formatted
+                  screenplay with professional styling—just like in Hollywood. This real-time feedback helps users
+                  understand the connection between the markdown they write and the final formatted output.
+                </p>
+                <p>
+                  Once all lessons are completed, users unlock the Playground where they can write without restrictions,
+                  creating their own scenes, developing engaging dialogue, and bringing their stories to life using all
+                  the skills they've learned.
                 </p>
               </div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-3xl font-medium tracking-tight">Educational Impact</h2>
+              <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800"></div>
+            </div>
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Screenplay Genie was created with the belief that <strong>creative skills should be accessible to everyone</strong>. By
+                breaking down the complex rules of screenwriting into manageable, interactive lessons, the app empowers
+                aspiring writers to focus on storytelling rather than getting lost in formatting details.
+              </p>
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-3xl font-medium tracking-tight">The Story</h2>
+              <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800"></div>
+            </div>
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Behind every project is a story. I created Screenplay Genie for the Swift Student Challenge to combine my passion for coding with the one for cinema. The project allowed me to explore how technology can make creative skills more accessible to beginners.
+              </p>
+              <Button asChild className="rounded-full">
+                <Link
+                  href="https://alessiorubicini.substack.com/p/my-swift-student-challenge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Full story on Substack
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </motion.section>
 
@@ -167,20 +218,20 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-3xl font-medium tracking-tight">Kood</h2>
+              <h2 className="text-3xl font-medium tracking-tight">The Code</h2>
               <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800"></div>
             </div>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                refiner on üles ehitatud <strong>Swift</strong> ja <strong>SwiftUI</strong> baasil.
+                Screenplay Genie is built with <strong>Swift</strong> and <strong>SwiftUI</strong>, the latest native technologies from Apple.
               </p>
               <Button asChild className="rounded-full">
                 <Link
-                  href="https://github.com/sookask/refiner"
+                  href="https://github.com/alessiorubicini/Screenplay-Genie"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Lähtekood GitHubis
+                  Source code on GitHub
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
