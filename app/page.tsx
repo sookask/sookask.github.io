@@ -30,7 +30,7 @@ export default function Home() {
           className="relative w-32 h-32 mb-8 overflow-hidden rounded-full border-4 border-background bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/50"
         >
           <Image
-            src="/assets/images/bitmap.jpg"
+            src="/assets/images/meme.png"
             alt="Profile picture"
             fill
             className="object-cover"
@@ -43,7 +43,7 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl font-medium tracking-tighter sm:text-4xl md:text-5xl mb-4"
         >
-          sookask
+          aabits
         </motion.h1>
         {/*<motion.p 
           initial={{ opacity: 0, y: 20 }}

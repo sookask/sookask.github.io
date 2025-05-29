@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import RefinerPage from "./refiner-page"
 
 export const metadata: Metadata = {
-  title: "refiner • sookask",
+  title: "refiner • aabits",
   description:
     "refiner - serial number generator",
 }

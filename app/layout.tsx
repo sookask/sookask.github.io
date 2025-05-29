@@ -7,8 +7,8 @@ import { Navigation } from "@/components/navigation"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "sookask",
-  description: "Sookask – Notes from the Edge of the Logic Board",
+  title: "aabits",
+  description: "aabits – Notes from the Edge of the Logic Board",
   generator: 'v0.dev'
 }
 
@@ -37,7 +37,7 @@ export default function RootLayout({
             <footer className="border-t py-6 md:py-0">
               <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
                 <p className="text-sm text-muted-foreground">
-                  © {new Date().getFullYear()} sookask. <span id="rights-reserved">All rights reserved.</span>
+                  © {new Date().getFullYear()} aabits. <span id="rights-reserved">All rights reserved.</span>
                 </p>
                 <p className="text-sm text-muted-foreground">
                   <span id="last-update">Last updated:</span> {lastUpdateDate}

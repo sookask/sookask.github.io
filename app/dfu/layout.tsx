@@ -1,10 +1,10 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-	title: "DFU info | sookask",
+	title: "DFU info | aabits",
 	description: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 	openGraph: {
-		title: "DFU info | sookask",
+		title: "DFU info | aabits",
 		description: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 		images: [
 			{
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "DFU info | sookask",
+		title: "DFU info | aabits",
 		description: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 		images: ["/assets/images/Do-not-reflow-t2.png"],
 	},

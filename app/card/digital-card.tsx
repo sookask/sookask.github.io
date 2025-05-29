@@ -96,7 +96,7 @@ export default function DigitalCard() {
               }}
             >
               <Image
-                src="/assets/images/bitmap.jpg"
+                src="/assets/images/meme.png"
                 alt="Profile picture"
                 fill
                 className="object-cover"
@@ -145,7 +145,7 @@ export default function DigitalCard() {
               transition: "transform 0.3s ease-out",
             }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-1">sookask</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-1">aabits</h2>
             <p className="text-gray-500 dark:text-gray-400 mb-2">Silicon whisperer</p>
 
             <div className="flex flex-wrap gap-2 mb-4">
