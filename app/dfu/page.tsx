@@ -152,12 +152,14 @@ export default function DFUPage() {
 							transition={{ duration: 0.7, delay: 0.9 }}
 							className="mt-8"
 						>
-							<Alert className="bg-[#323232] border border-[#9a9a9e] rounded-lg px-5 py-4">
+							<Alert className="rounded-lg px-5 py-4 border 
+							bg-[#f5f5f7] border-[#696969]
+							dark:bg-[#323232] dark:border-[#9a9a9e]">
 								<div>
-									<AlertTitle className="text-sm font-medium text-[#9a9a9e]">
-										note
+									<AlertTitle className="text-sm font-medium text-[#696969] dark:text-[#9a9a9e]">
+										Nipp
 									</AlertTitle>
-									<AlertDescription className="text-sm mt-2 text-white leading-relaxed">
+									<AlertDescription className="text-sm mt-2 text-black dark:text-white leading-relaxed">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis accumsan dignissim. Nulla dignissim enim massa, quis malesuada tellus pretium eget. 
 									</AlertDescription>
 								</div>
