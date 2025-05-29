@@ -31,24 +31,23 @@
 	},
 	{
 		"id": 10,
-		"title": "digitalgarage.unicam.it",
-		"description": "A web platform for the Digital Communication and Marketing course by Professor Ugo Esposito at the University of Camerino. A Classroom-style platform where students can get to know each other, form groups, collaborate, and manage the entire experience of the Digital Garage project group.",
-		"link": "https://digitalgarage.unicam.it",
-		"type": "application",
+		"title": "FlexBV",
+		"description": "FlexBV peamine tugevus seisneb PCB paigutuste ja skeemide PDF-ide sujuvas kuvamises, võimaldades klõpsata komponendil boardview's ja koheselt leida selle vastav skeem. Leian, et see on ka tehnikutele kasulik, et anda elektroonikutele täpsem info veast.",
+		"link": "https://pldaniels.com/flexbv5/",
+		"type": "äpp",
 		"year": "Tööriistad",
-		"motivation": "Built to enhance student collaboration",
-		"logoImage": "/assets/images/projects/digitalgarage.png"
+		"motivation": "FlexBV emaplaatide paigutuse ja skeemide vaatamise tarkvara, mis on mõeldud eelkõige elektroonikutele.",
+		"logoImage": "/assets/images/projects/flexbv.png"
 	},
 	{
 		"id": 3,
-		"title": "Pencil Drawer for SwiftUI",
-		"description": "A SwiftUI package enabling users to draw within apps using a simple interface. It simplifies the integration of PencilKit by using SwiftUI's binding system to handle drawing data.",
-		"technologies": ["Swift", "SwiftUI", "PencilKit"],
-		"link": "https://github.com/alessiorubicini/PencilDrawerForSwiftUI",
-		"type": "package",
-		"year": "Minu tehtud",
-		"motivation": "Created to simplify drawing integration in SwiftUI apps",
-		"logoImage": "/assets/images/projects/PencilDrawer.png"
+		"title": "Mactracker",
+		"description": "Mactracker on rakendus, mis pakub teavet kõikide Apple'i seadmete kohta, sealhulgas Maci, iPhone'i, iPadi ja muude seadmete kohta. Sealt saab tehnilisi andmeid, APN-e, spetsifikatsioone ja ajaloolist teavet Apple'i seadmete kohta.",
+		"link": "https://mactracker.ca",
+		"type": "äpp",
+		"year": "Informaatiline",
+		"motivation": "Mactracker on everymac steroididel, mis pakub põhjalikku teavet kõigi Apple'i toodete kohta.",
+		"logoImage": "/assets/images/projects/mactracker.png"
 	},
 	{
 		"id": 11,
