@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Info, ArrowRight } from "lucide-react"
 
 export default function DFUPage() {
 	const [scrollY, setScrollY] = useState(0)
@@ -144,19 +146,26 @@ export default function DFUPage() {
 							</table>
 						</div>
 						{/* Recovery-mode codes below the table */}
-						<div className="pt-4 space-y-2">
-							<h3 className="text-xl font-regular">
-								Veakoodid Recoverysse bootimisel
-							</h3>
-							<ul className="list-disc list-inside text-base space-y-1 text-gray-700 dark:text-gray-300">
-								<li>
-									<strong>2003F:</strong> Kehv internetiühendus, proovi Thunderbolt-LAN adapterit.
-								</li>
-								<li>
-									<strong>1008F:</strong> Viitab iCloud lukule. Kontrolli seerianumbrit checkmendiga.
-								</li>
-							</ul>
-						</div>
+						<motion.div
+							initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+							animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+							transition={{ duration: 0.7, delay: 0.9 }}
+							className="mt-8"
+						>
+							<Alert className="bg-[#eaf1fb] dark:bg-[#1e2b3a] text-[#0c2d5d] dark:text-white border-none rounded-lg px-5 py-4">
+								<div className="flex items-start gap-4">
+									<Info className="h-5 w-5 mt-0.5 text-[#0c2d5d] dark:text-white" />
+									<div>
+										<AlertTitle className="text-base font-semibold">
+											Nipp
+										</AlertTitle>
+										<AlertDescription className="text-sm mt-1 leading-relaxed">
+											Kui DFU ei õnnestu kohe, proovi kaablit vahetada ja veendu, et Mac oleks otsese USB-C ühendusega — ilma adapteriteta.
+										</AlertDescription>
+									</div>
+								</div>
+							</Alert>
+						</motion.div>
 					</section>
 
 					{/* Section 3 */}
