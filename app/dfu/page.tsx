@@ -173,6 +173,24 @@ export default function DFUPage() {
 						<h2 className="text-4xl font-semibold mb-4">
 							Üldised näpunäited
 						</h2>
+						<motion.div
+							initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+							animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+							transition={{ duration: 0.7, delay: 0.2 }}
+							className="w-full mb-12"
+						>
+							<Image
+								src="/assets/images/liquid-trackpad.jpeg"
+								alt="Liquid damage trackpad"
+								width={1480}
+								height={386}
+								className="w-full h-auto rounded-lg object-cover"
+								priority
+							/>
+							<p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
+								Vedelikukahjustusega trackpad üldjuhul põhjustab DFU protsessi nurjumise. 
+							</p>
+						</motion.div>
 						<ul className="list-disc list-inside text-base space-y-1">
 							<li>Kontrolli alati aku ja trackpadi seisukorda.</li>
 							<li>Ebaõnnestumisel ühenda lahti mittevajalikud komponendid.</li>

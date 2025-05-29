@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: "/assets/images/Do-not-reflow-t2.png",
-				width: 1200,
-				height: 800,
+				width: 1480,
+				height: 386,
 				alt: "Mida teha, kui Mac ei käivitu või on DFU-režiimis.",
 			},
 		],
