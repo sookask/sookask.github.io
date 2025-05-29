@@ -152,17 +152,14 @@ export default function DFUPage() {
 							transition={{ duration: 0.7, delay: 0.9 }}
 							className="mt-8"
 						>
-							<Alert className="bg-[#eaf1fb] dark:bg-[#1e2b3a] text-[#0c2d5d] dark:text-white border-none rounded-lg px-5 py-4">
-								<div className="flex items-start gap-4">
-									<Info className="h-5 w-5 mt-0.5 text-[#0c2d5d] dark:text-white" />
-									<div>
-										<AlertTitle className="text-base font-semibold">
-											Nipp
-										</AlertTitle>
-										<AlertDescription className="text-sm mt-1 leading-relaxed">
-											Kui DFU ei õnnestu kohe, proovi kaablit vahetada ja veendu, et Mac oleks otsese USB-C ühendusega — ilma adapteriteta.
-										</AlertDescription>
-									</div>
+							<Alert className="bg-[#323232] border border-[#9a9a9e] rounded-lg px-5 py-4">
+								<div>
+									<AlertTitle className="text-sm font-medium text-[#9a9a9e]">
+										note
+									</AlertTitle>
+									<AlertDescription className="text-sm mt-2 text-white leading-relaxed">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis accumsan dignissim. Nulla dignissim enim massa, quis malesuada tellus pretium eget. 
+									</AlertDescription>
 								</div>
 							</Alert>
 						</motion.div>
