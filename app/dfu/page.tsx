@@ -156,10 +156,10 @@ export default function DFUPage() {
 							bg-[#f5f5f7] border-[#696969]
 							dark:bg-[#323232] dark:border-[#9a9a9e]">
 								<div>
-									<AlertTitle className="text-lg font-medium text-[#696969] dark:text-[#9a9a9e]">
+									<AlertTitle className="text-base font-medium text-[#696969] dark:text-[#9a9a9e]">
 										Nipp
 									</AlertTitle>
-									<AlertDescription className="text-lg mt-2 text-black dark:text-white leading-relaxed">
+									<AlertDescription className="text-base mt-2 text-black dark:text-white leading-relaxed">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis accumsan dignissim. Nulla dignissim enim massa, quis malesuada tellus pretium eget. 
 									</AlertDescription>
 								</div>
