@@ -157,10 +157,11 @@ export default function DFUPage() {
 							dark:bg-[#323232] dark:border-[#9a9a9e]">
 								<div>
 									<AlertTitle className="text-base font-medium text-[#696969] dark:text-[#9a9a9e]">
-										Nipp
+										Veakoodid Recoverysse bootimisel
 									</AlertTitle>
 									<AlertDescription className="text-base font-light mt-2 text-black dark:text-white leading-relaxed">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis accumsan dignissim. Nulla dignissim enim massa, quis malesuada tellus pretium eget. 
+										<strong>2003F:</strong> Kehv internetiühendus, proovi Thunderbolt-LAN adapterit.
+										<strong>1008F:</strong> Viitab iCloud lukule. Kontrolli seerianumbrit checkmendiga.
 									</AlertDescription>
 								</div>
 							</Alert>
