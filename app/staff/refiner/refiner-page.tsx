@@ -55,7 +55,7 @@ export default function RefinerPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground max-w-[700px] mb-8 text-lg leading-relaxed"
           >
-            SwiftUI rakendus, mis aitab tehnikutel luua seerianumbreid ja hoida peal genereeritud seerianumbritel.
+            SwiftUI rakendus, mis aitab tehnikutel luua seerianumbreid ja hoida silma peal genereeritud seerianumbritel.
           </motion.p>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
