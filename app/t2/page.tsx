@@ -62,7 +62,7 @@ export default function T2Page() {
             </video>
 
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
-              rom oma täies hiilguses. Pin 1 on tähistatud valge täpiga, jälgi ka sina seda.
+              Video näitab rom-i jootmise protsessi.
             </p>
           </motion.div>
 
