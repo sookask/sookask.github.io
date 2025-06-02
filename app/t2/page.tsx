@@ -51,14 +51,17 @@ export default function T2Page() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="w-full mb-12"
           >
-            <Image
-              src="/assets/images/sokk.jpeg"
-              alt="socrom chip"
-              width={1480}
-              height={386}
-              className="w-full h-auto rounded-lg object-cover"
-              priority
-            />
+            <video
+              className="w-full h-auto rounded-lg"
+              controls
+              autoPlay
+              muted
+              loop
+            >
+              <source src="/assets/videos/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
               rom oma täies hiilguses. Pin 1 on tähistatud valge täpiga, jälgi ka sina seda.
             </p>
