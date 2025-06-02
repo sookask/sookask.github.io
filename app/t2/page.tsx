@@ -70,7 +70,7 @@ export default function T2Page() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-2xl font-normal mt-8 mb-4 text-foreground"
+            className="text-4xl font-semibold mt-8 mb-4 text-foreground"
           >
             Jooda kivi maha
           </motion.h2>
@@ -90,7 +90,7 @@ export default function T2Page() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="text-2xl font-normal mt-8 mb-4 text-foreground"
+            className="text-4xl font-semibold mt-8 mb-4 text-foreground"
           >
             Pane kivi tagasi
           </motion.h2>
@@ -110,7 +110,7 @@ export default function T2Page() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="text-2xl font-normal mt-8 mb-4 text-foreground"
+            className="text-4xl font-semibold mt-8 mb-4 text-foreground"
           >
             Anna kuuma
           </motion.h2>
@@ -152,7 +152,7 @@ export default function T2Page() {
             transition={{ duration: 0.7, delay: 0.9 }}
             className="mt-8 text-sm text-muted-foreground"
           >
-            Last updated: May 29, 2025
+            Last updated: June 2, 2025
           </motion.p>
         </motion.div>
       </div>
