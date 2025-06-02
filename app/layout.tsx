@@ -22,12 +22,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-	<head>
-        
-        
-        <link rel="icon" type="image/png" href="/assets/images/bitmap.jpg" />
-        
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/assets/images/light.png"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/assets/images/dark.png"
+          media="(prefers-color-scheme: dark)"
+        />
       </head>
+
 
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
