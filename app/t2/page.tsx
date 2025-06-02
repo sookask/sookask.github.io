@@ -57,7 +57,7 @@ export default function T2Page() {
               muted
               loop
             >
-              <source src="/assets/videos/video.mp4" type="video/mp4" />
+              <source src="/assets/videos/kivi.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
