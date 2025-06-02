@@ -54,7 +54,6 @@ export default function T2Page() {
             <video
               className="w-full h-auto rounded-lg"
               controls
-              autoPlay
               muted
               loop
             >
