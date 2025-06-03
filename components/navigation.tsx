@@ -100,7 +100,7 @@ export function Navigation() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="right">
               <nav className="flex flex-col gap-4 text-lg font-medium">
                 {routes.map((route) =>
                   route.external ? (
