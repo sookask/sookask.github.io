@@ -8,12 +8,12 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "aabits",
-  description: "aabits – Notes from the Edge of the Logic Board",
+  description: "aabits – collection of tools and resources for the repair community.",
   generator: 'v0.dev'
 }
 
 // Set the last update date
-const lastUpdateDate = "June 2, 2025"
+const lastUpdateDate = "June 3, 2025"
 
 export default function RootLayout({
   children,

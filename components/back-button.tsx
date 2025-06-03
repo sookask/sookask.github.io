@@ -8,7 +8,7 @@ interface BackButtonProps {
   href?: string
 }
 
-export function BackButton({ href = "/not-work" }: BackButtonProps) {
+export function BackButton({ href = "/dfu" }: BackButtonProps) {
   const router = useRouter()
 
   const handleClick = () => {
@@ -22,7 +22,7 @@ export function BackButton({ href = "/not-work" }: BackButtonProps) {
   return (
     <Button variant="ghost" size="sm" className="mb-6 pl-0 hover:bg-transparent" onClick={handleClick}>
       <ChevronLeft className="mr-1 h-4 w-4" />
-      <span>Back</span>
+      <span>tagasi</span>
     </Button>
   )
 }

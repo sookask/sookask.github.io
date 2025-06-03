@@ -16,11 +16,11 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
     <nav className="flex items-center space-x-1 text-sm text-muted-foreground mb-6">
       <Link href="/" className="flex items-center hover:text-foreground transition-colors">
         <Home className="h-4 w-4 mr-1" />
-        <span className="sr-only">Home</span>
+        <span className="sr-only">kodu</span>
       </Link>
       <ChevronRight className="h-4 w-4" />
-      <Link href="/not-work" className="hover:text-foreground transition-colors">
-        Not Work
+      <Link href="/dfu" className="hover:text-foreground transition-colors">
+        dfu
       </Link>
 
       {items.map((item, index) => (
