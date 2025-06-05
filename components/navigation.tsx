@@ -58,6 +58,7 @@ export function Navigation() {
             <span className="font-medium">aabits</span>
           </Link>
         </div>
+        <div className="flex-1" />
         <div className="hidden md:flex justify-end pr-8">
           <nav className="flex items-center space-x-6 text-sm font-light">
             {routes.map((route) =>
