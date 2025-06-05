@@ -69,7 +69,7 @@ export function Navigation() {
             rel="noopener noreferrer"
             className={cn(
               "transition-opacity hover:opacity-100 opacity-70",
-              route.active && "opacity-100 font-semibold"
+              route.active && "opacity-100 font-light"
             )}
           >
             {route.label}
@@ -80,18 +80,13 @@ export function Navigation() {
             href={route.href}
             className={cn(
               "transition-opacity hover:opacity-100 opacity-70",
-              route.active && "opacity-100 font-semibold"
+              route.active && "opacity-100 font-light"
             )}
           >
             {route.label}
           </Link>
         )
       )}
-
-      {/* Blue download-style button */}
-      <Button className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-1 rounded-full text-sm">
-        Download
-      </Button>
     </div>
 
     {/* Mobile Nav */}
