@@ -21,17 +21,17 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const routes: Route[] = [
-    { href: "/",       label: "kodu",    active: pathname === "/" },
-    { href: "/dfu",    label: "dfu",     active: pathname === "/dfu/" },
-    { href: "/staff",  label: "äpid",    active: pathname.startsWith("/staff/") },
+    { href: "/", label: "kodu", active: pathname === "/" },
+    { href: "/dfu", label: "dfu", active: pathname === "/dfu/" },
+    { href: "/staff", label: "äpid", active: pathname.startsWith("/staff/") },
     { href: "/tugiliin", label: "tugiliin", active: pathname === "/tugiliin/" },
-    { href: "/t2",     label: "t2",      active: pathname === "/t2/" },
+    { href: "/t2", label: "t2", active: pathname === "/t2/" },
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Note: no justify-between here */}
-      <div className="container mx-auto flex h-16 items-center px-4">
+      <div className="container mx-auto flex h-16 items-center px-8">
         {/* Logo (always on the left) */}
         <Link href="/" className="text-base font-semibold tracking-tight hover:opacity-80">
           aabits
@@ -39,7 +39,7 @@ export function Navigation() {
 
         {/* ─── Desktop nav + CTA group ─── */}
         {/* ml-auto pushes this entire block all the way to the right */}
-        <div className="hidden md:flex items-center ml-auto space-x-4 text-sm font-medium">
+        <div className="hidden md:flex items-center ml-8 space-x-4 text-sm font-medium">
           {routes.map((route) =>
             route.external ? (
               <a
@@ -67,11 +67,6 @@ export function Navigation() {
               </Link>
             )
           )}
-
-          {/* Example “Download” button at the very right */}
-          <Button className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-1 rounded-full text-sm">
-            joller
-          </Button>
         </div>
 
         {/* ─── Mobile menu toggle ─── */}
