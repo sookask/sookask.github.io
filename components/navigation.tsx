@@ -14,7 +14,6 @@ type Route = {
   label: string
   active: boolean
   external?: boolean
-  gradient?: boolean
 }
 
 export function Navigation() {
@@ -22,44 +21,25 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const routes: Route[] = [
-    {
-      href: "/",
-      label: "kodu",
-      active: pathname === "/",
-    },
-    {
-      href: "/dfu",
-      label: "dfu",
-      active: pathname === "/dfu/",
-    },
-    {
-      href: "/staff",
-      label: "äpid",
-      active: pathname === "/staff/" || pathname.startsWith("/staff/"),
-    },
-    {
-      href: "/tugiliin",
-      label: "tugiliin",
-      active: pathname === "/tugiliin/",
-    },
-    {
-      href: "/t2",
-      label: "t2",
-      active: pathname === "/t2/",
-
-    }
+    { href: "/",       label: "kodu",    active: pathname === "/" },
+    { href: "/dfu",    label: "dfu",     active: pathname === "/dfu/" },
+    { href: "/staff",  label: "äpid",    active: pathname.startsWith("/staff/") },
+    { href: "/tugiliin", label: "tugiliin", active: pathname === "/tugiliin/" },
+    { href: "/t2",     label: "t2",      active: pathname === "/t2/" },
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* Logo - left */}
+      {/* Note: no justify-between here */}
+      <div className="container mx-auto flex h-16 items-center px-4">
+        {/* Logo (always on the left) */}
         <Link href="/" className="text-base font-semibold tracking-tight hover:opacity-80">
           aabits
         </Link>
 
-        {/* Nav + button group - right */}
-         <div className="container mx-auto flex h-16 items-center justify-start gap-8 px-4">
+        {/* ─── Desktop nav + CTA group ─── */}
+        {/* ml-auto pushes this entire block all the way to the right */}
+        <div className="hidden md:flex items-center ml-auto space-x-4 text-sm font-medium">
           {routes.map((route) =>
             route.external ? (
               <a
@@ -69,7 +49,7 @@ export function Navigation() {
                 rel="noopener noreferrer"
                 className={cn(
                   "transition-opacity hover:opacity-100 opacity-70",
-                  route.active && "opacity-100 font-light"
+                  route.active && "opacity-100 font-semibold"
                 )}
               >
                 {route.label}
@@ -80,17 +60,22 @@ export function Navigation() {
                 href={route.href}
                 className={cn(
                   "transition-opacity hover:opacity-100 opacity-70",
-                  route.active && "opacity-100 font-light"
+                  route.active && "opacity-100 font-semibold"
                 )}
               >
                 {route.label}
               </Link>
             )
           )}
+
+          {/* Example “Download” button at the very right */}
+          <Button className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-1 rounded-full text-sm">
+            joller
+          </Button>
         </div>
 
-        {/* Mobile Nav */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* ─── Mobile menu toggle ─── */}
+        <div className="md:hidden flex items-center gap-2 ml-auto">
           <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
