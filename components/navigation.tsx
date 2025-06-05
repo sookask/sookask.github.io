@@ -23,7 +23,7 @@ export function Navigation() {
 
   const routes: Route[] = [
     { href: "/",       label: "kodu",     active: pathname === "/" },
-    { href: "/dfu",    label: "dfu",      active: pathname === "/dfu/" },
+    { href: "/dfu",    label: "DFU",      active: pathname === "/dfu/" },
     { href: "/staff",  label: "äpid",     active: pathname.startsWith("/staff/") },
     { href: "/tugiliin", label: "tugiliin", active: pathname === "/tugiliin/" },
     { href: "/t2",     label: "t2",       active: pathname === "/t2/" },
