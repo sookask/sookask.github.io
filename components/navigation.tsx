@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 type Route = {
@@ -45,56 +46,56 @@ export function Navigation() {
       href: "/t2",
       label: "t2",
       active: pathname === "/t2/",
-    },
+
+    }
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        {/* ─── Logo on the far left ─── */}
-        <Link href="/" className="mr-8 flex items-center space-x-2">
-          <span className="text-lg font-semibold">aabits</span>
-        </Link>
+      <div className="container flex h-16 items-center justify-between">
+        <div className="flex-1 flex justify-center">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="font-medium">aabits</span>
+          </Link>
+        </div>
+        <div className="hidden md:flex flex-1 justify-end">
+          <nav className="flex items-center space-x-6 text-sm font-light">
+            {routes.map((route) =>
+              route.external ? (
+                <a
+                  key={route.href}
+                  href={route.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "transition-colors hover:text-foreground/80",
+                    route.active ? "text-foreground" : "text-foreground/60",
+                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                  )}
+                >
+                  {route.label}
+                </a>
+              ) : (
+                <Link
+                  key={route.href}
+                  href={route.href}
+                  className={cn(
+                    "transition-colors hover:text-foreground/80 font-normal",
+                    route.active ? "text-foreground" : "text-foreground/60",
+                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                  )}
+                >
+                  {route.label}
+                </Link>
+              )
+            )}
+          </nav>
+        </div>
 
-        {/* ─── Desktop nav links (all left-aligned, spaced via space-x-8) ─── */}
-        <nav className="hidden md:flex flex-1 space-x-8 overflow-x-auto">
-          {routes.map((route) =>
-            route.external ? (
-              <a
-                key={route.href}
-                href={route.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "pb-2 transition-colors whitespace-nowrap",
-                  route.active
-                    ? "border-b-2 border-foreground text-foreground"
-                    : "border-b-2 border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
-                )}
-              >
-                {route.label}
-              </a>
-            ) : (
-              <Link
-                key={route.href}
-                href={route.href}
-                className={cn(
-                  "pb-2 transition-colors whitespace-nowrap",
-                  route.active
-                    ? "border-b-2 border-foreground text-foreground"
-                    : "border-b-2 border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
-                )}
-              >
-                {route.label}
-              </Link>
-            )
-          )}
-        </nav>
-
-        {/* ─── Mobile menu trigger (right side) ─── */}
-        <div className="flex items-center ml-auto md:hidden">
+        {/* Mobile menu trigger (no theme toggle) */}
+        <div className="flex-1 flex justify-end items-center">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
+            <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon" className="mr-2">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
@@ -110,10 +111,10 @@ export function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
-                        "transition-colors whitespace-nowrap",
-                        route.active
-                          ? "text-foreground"
-                          : "text-foreground/60 hover:text-foreground"
+                        "transition-colors hover:text-foreground/80 font-normal",
+                        route.active ? "text-foreground" : "text-foreground/60",
+                        route.gradient &&
+                        "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -124,10 +125,10 @@ export function Navigation() {
                       key={route.href}
                       href={route.href}
                       className={cn(
-                        "transition-colors whitespace-nowrap",
-                        route.active
-                          ? "text-foreground"
-                          : "text-foreground/60 hover:text-foreground"
+                        "transition-colors hover:text-foreground/80 font-normal",
+                        route.active ? "text-foreground" : "text-foreground/60",
+                        route.gradient &&
+                        "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
