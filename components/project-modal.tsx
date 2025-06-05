@@ -63,7 +63,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   }, [])
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ease-in-out backdrop-blur-xl bg-white/40 dark:bg-black/60 animate-in fade-in zoom-in-95">
+    <div className="fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ease-in-out backdrop-blur-xl bg-background/40 dark:bg-background/60 animate-in fade-in zoom-in-95">
       <div
         ref={modalRef}
         tabIndex={-1}

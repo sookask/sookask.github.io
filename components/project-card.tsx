@@ -30,7 +30,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
       {/* Header section */}
       <div className="flex items-start gap-6">
         {/* Logo/Icon - can be emoji or image */}
-        <div className="flex-shrink-0 w-16 h-16 rounded-lg flex items-center justify-center overflow-hidden bg-background/50 transition-transform duration-200 group-hover:scale-105">
+        <div className="flex-shrink-0 w-16 h-16 rounded-lg flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105">
           {project.logoImage ? (
             <Image
               src={project.logoImage || "/placeholder.svg"}
@@ -61,7 +61,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
     <button
       type="button"
       onClick={() => onSelect?.(project)}
-      className="group block relative overflow-hidden rounded-2xl transition-all bg-card hover:bg-card/80 transform hover:scale-[1.02] duration-200 w-full text-left focus:outline-none border border-border/50 hover:border-border/80"
+      className="group block relative overflow-hidden rounded-2xl transition-all bg-card transform hover:scale-[1.02] duration-200 w-full text-left focus:outline-none border border-border/50"
     >
       {content}
     </button>

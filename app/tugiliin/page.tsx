@@ -46,7 +46,7 @@ export default function SuggestionsPage() {
 
         <div className="relative mt-2">
           {/* Suggestions timeline */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-border dark:bg-white/20" />
 
           <div className="space-y-12">
             {/* Faulty touchbar */}
@@ -56,8 +56,8 @@ export default function SuggestionsPage() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-foreground" />
+              <div className="absolute left-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-accent-foreground" />
               </div>
               <div>
                 <h2 className="text-xl font-normal">TouchBar ei tule üles bootides nähtavale</h2>
@@ -76,8 +76,8 @@ export default function SuggestionsPage() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-foreground" />
+              <div className="absolute left-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-accent-foreground" />
               </div>
               <div>
                 <h2 className="text-xl font-normal">Black/dull screen</h2>
@@ -96,8 +96,8 @@ export default function SuggestionsPage() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-foreground" />
+              <div className="absolute left-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-accent-foreground" />
               </div>
               <div>
                 <h2 className="text-xl font-normal">Vigane angle sensor</h2>

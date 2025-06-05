@@ -23,6 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1D1D1F" media="(prefers-color-scheme: dark)" />
         <link rel="icon" type="image/png" href="/assets/images/bitmap.png" />
       </head>
 

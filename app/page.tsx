@@ -82,7 +82,7 @@ export default function Home() {
             asChild 
             variant="outline" 
             size="icon" 
-            className="rounded-full h-12 w-12 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-primary"
+            className="rounded-full h-12 w-12 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-primary border-black/20 dark:border-white/20"
           >
             <Link href="https://github.com/sookask" target="_blank" aria-label="GitHub">
               <Github className="h-7 w-7" />
@@ -94,7 +94,7 @@ export default function Home() {
             asChild 
             variant="outline" 
             size="icon" 
-            className="rounded-full h-12 w-12 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-primary"
+            className="rounded-full h-12 w-12 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:border-primary border-black/20 dark:border-white/20"
           >
             <Link href="mailto:sookask@icloud.com" aria-label="Email">
               <Mail className="h-7 w-7" />
