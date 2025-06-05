@@ -22,79 +22,58 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const routes: Route[] = [
-    {
-      href: "/",
-      label: "kodu",
-      active: pathname === "/",
-    },
-	{
-		href: "/dfu",
-		label: "dfu",
-		active: pathname === "/dfu/",
-	},
-    {
-      href: "/staff",
-      label: "äpid",
-      active: pathname === "/staff/" || pathname.startsWith("/staff/"),
-    },
-    {
-      href: "/tugiliin",
-      label: "tugiliin",
-      active: pathname === "/tugiliin/",
-    },
-	{
-		href: "/t2",
-		label: "t2",
-		active: pathname === "/t2/",
-		
-	  }
+    { href: "/",       label: "kodu",     active: pathname === "/" },
+    { href: "/dfu",    label: "dfu",      active: pathname === "/dfu/" },
+    { href: "/staff",  label: "äpid",     active: pathname.startsWith("/staff/") },
+    { href: "/tugiliin", label: "tugiliin", active: pathname === "/tugiliin/" },
+    { href: "/t2",     label: "t2",       active: pathname === "/t2/" },
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex-1 flex justify-start">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-medium">aabits</span>
+      <div className="container relative mx-auto flex h-16 items-center px-4">
+        <div className="absolute left-1/2 top-0 flex h-full -translate-x-1/2 items-center">
+          <Link href="/" className="text-base font-medium tracking-tight hover:opacity-80">
+            aabits
           </Link>
         </div>
-        <div className="hidden md:flex flex-1 justify-center">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {routes.map((route) =>
-              route.external ? (
-                <a
-                  key={route.href}
-                  href={route.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    route.active ? "text-foreground" : "text-foreground/60",
-                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
-                  )}
-                >
-                  {route.label}
-                </a>
-              ) : (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className={cn(
-                    "transition-colors hover:text-foreground/80 font-normal",
-                    route.active ? "text-foreground" : "text-foreground/60",
-                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
-                  )}
-                >
-                  {route.label}
-                </Link>
-              ),
-            )}
-          </nav>
+        <div className="hidden md:flex flex-1 items-center justify-end space-x-6 text-sm font-medium">
+          {routes.map((route) =>
+            route.external ? (
+              <a
+                key={route.href}
+                href={route.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "transition-colors hover:text-foreground/80",
+                  route.active ? "text-foreground" : "text-foreground/60",
+                  route.gradient &&
+                    "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                )}
+              >
+                {route.label}
+              </a>
+            ) : (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={cn(
+                  "transition-colors hover:text-foreground/80 font-normal",
+                  route.active ? "text-foreground" : "text-foreground/60",
+                  route.gradient &&
+                    "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                )}
+              >
+                {route.label}
+              </Link>
+            )
+          )}
         </div>
-        <div className="flex-1 flex justify-end items-center gap-2">
+        <div className="flex flex-1 justify-end items-center gap-2 md:hidden">
           <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="mr-2">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
@@ -112,7 +91,8 @@ export function Navigation() {
                       className={cn(
                         "transition-colors hover:text-foreground/80 font-normal",
                         route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        route.gradient &&
+                          "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -125,13 +105,14 @@ export function Navigation() {
                       className={cn(
                         "transition-colors hover:text-foreground/80 font-normal",
                         route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        route.gradient &&
+                          "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
                       {route.label}
                     </Link>
-                  ),
+                  )
                 )}
               </nav>
             </SheetContent>
