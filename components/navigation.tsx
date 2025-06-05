@@ -53,46 +53,48 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex-1 flex justify-start">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-medium">aabits</span>
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <Link href="/" className="text-base font-semibold tracking-tight hover:opacity-80">
+            aabits
           </Link>
         </div>
-        <div className="hidden md:flex flex-1 justify-center">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {routes.map((route) =>
-              route.external ? (
-                <a
-                  key={route.href}
-                  href={route.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    route.active ? "text-foreground" : "text-foreground/60",
-                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
-                  )}
-                >
-                  {route.label}
-                </a>
-              ) : (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className={cn(
-                    "transition-colors hover:text-foreground/80 font-normal",
-                    route.active ? "text-foreground" : "text-foreground/60",
-                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
-                  )}
-                >
-                  {route.label}
-                </Link>
-              ),
-            )}
-          </nav>
+
+        {/* Desktop Nav - aligned to the right */}
+        <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          {routes.map((route) =>
+            route.external ? (
+              <a
+                key={route.href}
+                href={route.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "transition-opacity hover:opacity-100 opacity-70",
+                  route.active && "opacity-100 font-semibold"
+                )}
+              >
+                {route.label}
+              </a>
+            ) : (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={cn(
+                  "transition-opacity hover:opacity-100 opacity-70",
+                  route.active && "opacity-100 font-semibold"
+                )}
+              >
+                {route.label}
+              </Link>
+            )
+          )}
         </div>
-        <div className="flex-1 flex justify-end items-center gap-2">
+
+        {/* Right Section */}
+        <div className="flex items-center gap-2">
           <ThemeToggle />
+          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon" className="mr-2">
@@ -110,9 +112,8 @@ export function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
-                        "transition-colors hover:text-foreground/80 font-normal",
-                        route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        "transition-opacity hover:opacity-100 opacity-70",
+                        route.active && "opacity-100 font-semibold"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -123,15 +124,14 @@ export function Navigation() {
                       key={route.href}
                       href={route.href}
                       className={cn(
-                        "transition-colors hover:text-foreground/80 font-normal",
-                        route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        "transition-opacity hover:opacity-100 opacity-70",
+                        route.active && "opacity-100 font-semibold"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
                       {route.label}
                     </Link>
-                  ),
+                  )
                 )}
               </nav>
             </SheetContent>
