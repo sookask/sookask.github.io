@@ -59,7 +59,7 @@ export function Navigation() {
           </Link>
         </div>
         <div className="hidden md:flex flex-1 justify-end">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-6 text-sm font-light ml-4">
             {routes.map((route) =>
               route.external ? (
                 <a
