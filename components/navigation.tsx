@@ -31,7 +31,7 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Note: no justify-between here */}
-      <div className="container mx-auto flex h-16 items-center px-8">
+      <div className="container mx-auto flex h-16 items-center justify-between px-8">
         {/* Logo (always on the left) */}
         <Link href="/" className="text-base font-semibold tracking-tight hover:opacity-80">
           aabits
@@ -39,7 +39,7 @@ export function Navigation() {
 
         {/* ─── Desktop nav + CTA group ─── */}
         {/* ml-auto pushes this entire block all the way to the right */}
-        <div className="hidden md:flex items-center ml-8 space-x-4 text-sm font-medium">
+        <div className="hidden md:flex items-center ml-auto space-x-4 text-sm font-medium">
           {routes.map((route) =>
             route.external ? (
               <a
