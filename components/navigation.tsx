@@ -53,12 +53,12 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 flex justify-center">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-medium">aabits</span>
           </Link>
         </div>
-        <div className="hidden md:flex flex-1 justify-center">
+        <div className="hidden md:flex flex-1 justify-end">
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {routes.map((route) =>
               route.external ? (
