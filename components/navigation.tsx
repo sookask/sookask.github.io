@@ -87,12 +87,13 @@ export function Navigation() {
                 >
                   {route.label}
                 </Link>
-              ),
+              )
             )}
           </nav>
         </div>
-        <div className="flex-1 flex justify-end items-center gap-2">
-          <ThemeToggle />
+
+        {/* Mobile menu trigger (no theme toggle) */}
+        <div className="flex-1 flex justify-end items-center">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon" className="mr-2">
@@ -112,7 +113,8 @@ export function Navigation() {
                       className={cn(
                         "transition-colors hover:text-foreground/80 font-normal",
                         route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        route.gradient &&
+                        "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -125,13 +127,14 @@ export function Navigation() {
                       className={cn(
                         "transition-colors hover:text-foreground/80 font-normal",
                         route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        route.gradient &&
+                        "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
                       {route.label}
                     </Link>
-                  ),
+                  )
                 )}
               </nav>
             </SheetContent>
