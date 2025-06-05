@@ -59,7 +59,7 @@ export function Navigation() {
         </Link>
 
         {/* Nav + button group - right */}
-        <div className="hidden md:flex items-center text-sm font-medium ml-auto gap-6">
+        <div className="container mx-auto flex h-16 items-center justify-between px-8">
           {routes.map((route) =>
             route.external ? (
               <a
