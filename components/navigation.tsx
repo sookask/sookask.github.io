@@ -41,7 +41,7 @@ export function Navigation() {
         </Link>
 
         {/* RIGHT: Nav links (desktop only) */}
-+       <nav className="hidden md:flex h-14 items-center space-x-6 text-xs font-normal">
+        <nav className="hidden md:flex items-center space-x-6 text-xs font-normal">
           {routes.map((route) =>
             route.external ? (
               <a
@@ -63,7 +63,7 @@ export function Navigation() {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "pb-1 border-b-2 transition-colors",
+                  "flex h-full items-center border-b-2 transition-colors",
                   route.active
                     ? "border-foreground text-foreground"
                     : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
