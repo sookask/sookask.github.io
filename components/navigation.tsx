@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 type Route = {
@@ -22,81 +21,65 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const routes: Route[] = [
-    {
-      href: "/",
-      label: "kodu",
-      active: pathname === "/",
-    },
-    {
-      href: "/dfu",
-      label: "dfu",
-      active: pathname === "/dfu/",
-    },
+    { href: "/", label: "kodu", active: pathname === "/" },
+    { href: "/dfu", label: "dfu", active: pathname === "/dfu/" },
     {
       href: "/staff",
       label: "äpid",
       active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
-    {
-      href: "/tugiliin",
-      label: "tugiliin",
-      active: pathname === "/tugiliin/",
-    },
-    {
-      href: "/t2",
-      label: "t2",
-      active: pathname === "/t2/",
-
-    }
+    { href: "/tugiliin", label: "tugiliin", active: pathname === "/tugiliin/" },
+    { href: "/t2", label: "t2", active: pathname === "/t2/" },
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-leading justify-between">
-        <div className="flex-1 flex justify-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-medium">aabits</span>
-          </Link>
-        </div>
-        <div className="hidden md:flex flex-1 justify-end">
-          <nav className="flex items-center space-x-6 text-sm font-light">
-            {routes.map((route) =>
-              route.external ? (
-                <a
-                  key={route.href}
-                  href={route.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "transition-colors hover:text-foreground/80",
-                    route.active ? "text-foreground" : "text-foreground/60",
-                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
-                  )}
-                >
-                  {route.label}
-                </a>
-              ) : (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className={cn(
-                    "transition-colors hover:text-foreground/80 font-normal",
-                    route.active ? "text-foreground" : "text-foreground/60",
-                    route.gradient && "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
-                  )}
-                >
-                  {route.label}
-                </Link>
-              )
-            )}
-          </nav>
-        </div>
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        {/* LEFT: Title */}
+        <Link href="/" className="flex items-center space-x-2">
+          <span className="text-base font-medium">aabits</span>
+        </Link>
 
-        {/* Mobile menu trigger (no theme toggle) */}
-        <div className="flex-1 flex justify-end items-center">
+        {/* RIGHT: Nav links (desktop only) */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-light">
+          {routes.map((route) =>
+            route.external ? (
+              <a
+                key={route.href}
+                href={route.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "pb-1 border-b-2 transition-colors",
+                  route.active
+                    ? "border-foreground text-foreground"
+                    : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
+                )}
+              >
+                {route.label}
+              </a>
+            ) : (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={cn(
+                  "pb-1 border-b-2 transition-colors",
+                  route.active
+                    ? "border-foreground text-foreground"
+                    : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
+                )}
+              >
+                {route.label}
+              </Link>
+            )
+          )}
+        </nav>
+
+        {/* MOBILE: Hamburger menu */}
+        <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="mr-2">
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
@@ -111,10 +94,9 @@ export function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
-                        "transition-colors hover:text-foreground/80 font-normal",
-                        route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient &&
-                        "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        route.active
+                          ? "text-foreground"
+                          : "text-foreground/60 hover:text-foreground"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -125,10 +107,9 @@ export function Navigation() {
                       key={route.href}
                       href={route.href}
                       className={cn(
-                        "transition-colors hover:text-foreground/80 font-normal",
-                        route.active ? "text-foreground" : "text-foreground/60",
-                        route.gradient &&
-                        "bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent hover:from-red-600 hover:via-yellow-600 hover:to-purple-600"
+                        route.active
+                          ? "text-foreground"
+                          : "text-foreground/60 hover:text-foreground"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
