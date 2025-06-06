@@ -91,20 +91,21 @@ export function Navigation() {
           </nav>
 
           {/* MOBILE: Hamburger + chevron */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen((prev) => !prev)}
-            >
-              {isOpen ? (
-                <ChevronUp className="h-5 w-5" />
-              ) : (
-                <ChevronDown className="h-5 w-5" />
-              )}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="
+            hover:bg-transparent active:bg-transparent focus:bg-transparent focus:ring-0"
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {isOpen ? (
+              <ChevronUp className="h-5 w-5" />
+            ) : (
+              <ChevronDown className="h-5 w-5" />
+            )}
+            <span className="sr-only">Toggle menu</span>
+          </Button>
+
         </div>
 
         {/* MOBILE DROPDOWN (inside same blur background) */}
