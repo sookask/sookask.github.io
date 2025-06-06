@@ -21,15 +21,31 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const routes: Route[] = [
-    { href: "/", label: "kodu", active: pathname === "/" },
-    { href: "/dfu", label: "dfu", active: pathname === "/dfu/" },
+    {
+      href: "/",
+      label: "Kodu",
+      active: pathname === "/"
+    },
+    {
+      href: "/dfu",
+      label: "DFU",
+      active: pathname === "/dfu/"
+    },
     {
       href: "/staff",
-      label: "äpid",
+      label: "Äpid",
       active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
-    { href: "/tugiliin", label: "tugiliin", active: pathname === "/tugiliin/" },
-    { href: "/t2", label: "t2", active: pathname === "/t2/" },
+    {
+      href: "/tugiliin",
+      label: "Tugiliin",
+      active: pathname === "/tugiliin/"
+    },
+    {
+      href: "/t2",
+      label: "T2",
+      active: pathname === "/t2/"
+    },
   ]
 
   return (
@@ -50,7 +66,7 @@ export function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "pb-1 border-b-2 transition-colors",
+                  "h-full flex items-center border-b-2 transition-colors",
                   route.active
                     ? "border-foreground text-foreground"
                     : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
@@ -63,7 +79,7 @@ export function Navigation() {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "flex h-full items-center border-b-2 transition-colors",
+                  "h-full flex items-center border-b-2 transition-colors",
                   route.active
                     ? "border-foreground text-foreground"
                     : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
@@ -74,6 +90,7 @@ export function Navigation() {
             )
           )}
         </nav>
+
 
         {/* MOBILE: Hamburger menu */}
         <div className="md:hidden">
