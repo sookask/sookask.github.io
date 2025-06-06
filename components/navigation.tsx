@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 type Route = {
@@ -92,19 +92,19 @@ export function Navigation() {
         </nav>
 
         {/* MOBILE: Hamburger dropdown menu */}
-        <div className="relative md:hidden">
+        <div className="md:hidden relative">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            <Menu className="h-5 w-5" />
+            {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
             <span className="sr-only">Toggle Menu</span>
           </Button>
 
           {isOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md bg-background shadow-lg ring-1 ring-border z-50">
-              <nav className="flex flex-col py-2">
+            <div className="absolute left-0 top-full w-full bg-background transition-all duration-200">
+              <nav className="flex flex-col items-start px-4 py-2">
                 {routes.map((route) =>
                   route.external ? (
                     <a
@@ -113,8 +113,8 @@ export function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
-                        "px-4 py-2 text-sm hover:bg-muted",
-                        route.active ? "text-foreground font-medium" : "text-foreground/60"
+                        "py-2 text-sm",
+                        route.active ? "text-foreground font-medium" : "text-foreground/60 hover:text-foreground"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -125,8 +125,8 @@ export function Navigation() {
                       key={route.href}
                       href={route.href}
                       className={cn(
-                        "px-4 py-2 text-sm hover:bg-muted",
-                        route.active ? "text-foreground font-medium" : "text-foreground/60"
+                        "py-2 text-sm",
+                        route.active ? "text-foreground font-medium" : "text-foreground/60 hover:text-foreground"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -138,7 +138,6 @@ export function Navigation() {
             </div>
           )}
         </div>
-
       </div>
     </header>
   )
