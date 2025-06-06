@@ -19,36 +19,40 @@ export function Navigation() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
 
+  // Close dropdown if window is resized to desktop (>= 768px)
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isOpen) {
+        setIsOpen(false)
+      }
+    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [isOpen])
+
   const routes: Route[] = [
     { href: "/", label: "Kodu", active: pathname === "/" },
-    {
-      href: "/dfu",
-      label: "DFU",
-      active: pathname === "/dfu/",
-    },
+    { href: "/dfu", label: "DFU", active: pathname === "/dfu/" },
     {
       href: "/staff",
       label: "Äpid",
       active: pathname === "/staff/" || pathname.startsWith("/staff/"),
     },
-    {
-      href: "/tugiliin",
-      label: "Tugiliin",
-      active: pathname === "/tugiliin/",
-    },
+    { href: "/tugiliin", label: "Tugiliin", active: pathname === "/tugiliin/" },
     { href: "/t2", label: "T2", active: pathname === "/t2/" },
   ]
 
   return (
     <header className="relative sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {/* ─── TOP ROW ────────────────────────────────────────────────────────── */}
       <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-6">
-        {/* LEFT: Title */}
+        {/* LEFT: Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-semibold">aabits</span>
         </Link>
 
-        {/* RIGHT: Nav links (desktop only) */}
-        <nav className="hidden md:flex items-center space-x-6 text-xs font-normal h-14">
+        {/* RIGHT: Desktop links */}
+        <nav className="hidden md:flex items-center space-x-6 text-xs font-normal h-full">
           {routes.map((route) =>
             route.external ? (
               <a
@@ -82,7 +86,7 @@ export function Navigation() {
           )}
         </nav>
 
-        {/* MOBILE: Hamburger dropdown menu */}
+        {/* MOBILE: Hamburger + chevron */}
         <div className="md:hidden">
           <Button
             variant="ghost"
@@ -94,15 +98,15 @@ export function Navigation() {
             ) : (
               <ChevronDown className="h-5 w-5" />
             )}
-            <span className="sr-only">Toggle Menu</span>
+            <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
       </div>
 
-      {/* ↓ When isOpen, extend header downward with full-width nav */}
+      {/* ─── MOBILE DROPDOWN (inside the same header bg) ──────────────────────── */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-background border-t border-gray-200 dark:border-gray-700">
-          <nav className="flex flex-col px-4 py-3 space-y-1">
+        <div className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <nav className="flex flex-col px-4 py-2 space-y-1 text-sm">
             {routes.map((route) =>
               route.external ? (
                 <a
@@ -111,7 +115,7 @@ export function Navigation() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "block text-sm py-2",
+                    "block py-2",
                     route.active
                       ? "text-foreground font-medium"
                       : "text-foreground/60 hover:text-foreground"
@@ -125,7 +129,7 @@ export function Navigation() {
                   key={route.href}
                   href={route.href}
                   className={cn(
-                    "block text-sm py-2",
+                    "block py-2",
                     route.active
                       ? "text-foreground font-medium"
                       : "text-foreground/60 hover:text-foreground"
