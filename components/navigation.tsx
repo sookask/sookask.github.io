@@ -91,17 +91,20 @@ export function Navigation() {
           )}
         </nav>
 
-        {/* MOBILE: Hamburger menu */}
-        <div className="md:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <nav className="flex flex-col gap-4 text-lg font-medium">
+        {/* MOBILE: Hamburger dropdown menu */}
+        <div className="relative md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Toggle Menu</span>
+          </Button>
+
+          {isOpen && (
+            <div className="absolute right-0 mt-2 w-48 rounded-md bg-background shadow-lg ring-1 ring-border z-50">
+              <nav className="flex flex-col py-2">
                 {routes.map((route) =>
                   route.external ? (
                     <a
@@ -110,9 +113,8 @@ export function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
-                        route.active
-                          ? "text-foreground"
-                          : "text-foreground/60 hover:text-foreground"
+                        "px-4 py-2 text-sm hover:bg-muted",
+                        route.active ? "text-foreground font-medium" : "text-foreground/60"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -123,9 +125,8 @@ export function Navigation() {
                       key={route.href}
                       href={route.href}
                       className={cn(
-                        route.active
-                          ? "text-foreground"
-                          : "text-foreground/60 hover:text-foreground"
+                        "px-4 py-2 text-sm hover:bg-muted",
+                        route.active ? "text-foreground font-medium" : "text-foreground/60"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -134,9 +135,10 @@ export function Navigation() {
                   )
                 )}
               </nav>
-            </SheetContent>
-          </Sheet>
+            </div>
+          )}
         </div>
+
       </div>
     </header>
   )
