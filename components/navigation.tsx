@@ -66,7 +66,7 @@ export function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "relative flex items-center h-full px-1",
+                  "relative inline-flex items-center h-full",
                   route.active
                     ? "text-foreground before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-foreground"
                     : "text-foreground/60 hover:text-foreground"
@@ -79,7 +79,7 @@ export function Navigation() {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "relative flex items-center h-full px-1",
+                  "relative inline-flex items-center h-full",
                   route.active
                     ? "text-foreground before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-foreground"
                     : "text-foreground/60 hover:text-foreground"
