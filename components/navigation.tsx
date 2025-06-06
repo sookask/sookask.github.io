@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronUp } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 type Route = {
   href: string
@@ -43,11 +44,11 @@ export function Navigation() {
   ]
 
   return (
-    // Keep <header> as the sticky container, but background/blur move inside
+    // Header stays sticky, but background/blur live inside
     <header className="sticky top-0 z-50 w-full">
-      {/* ─── WRAPPER WITH BLUR + BACKGROUND ──────────────────────────────── */}
+      {/* WRAPPER WITH BLUR + BACKGROUND */}
       <div className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        {/* ─── TOP ROW ─────────────────────────────────────────────────── */}
+        {/* TOP ROW */}
         <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-6">
           {/* LEFT: Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -106,47 +107,56 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* ─── MOBILE DROPDOWN (inside same blur background) ─────────────── */}
-        {isOpen && (
-          <nav className="container mx-auto flex flex-col px-4 md:px-6 pb-2 pt-1 space-y-1 text-sm">
-            {routes.map((route) =>
-              route.external ? (
-                <a
-                  key={route.href}
-                  href={route.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "block py-2",
-                    route.active
-                      ? "text-foreground font-medium"
-                      : "text-foreground/60 hover:text-foreground"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {route.label}
-                </a>
-              ) : (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className={cn(
-                    "block py-2",
-                    route.active
-                      ? "text-foreground font-medium"
-                      : "text-foreground/60 hover:text-foreground"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {route.label}
-                </Link>
-              )
-            )}
-          </nav>
-        )}
+        {/* MOBILE DROPDOWN (inside same blur background) */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.nav
+              key="mobile-dropdown"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="container mx-auto flex flex-col overflow-hidden px-4 md:px-6 pb-2 pt-1 space-y-1 text-sm"
+            >
+              {routes.map((route) =>
+                route.external ? (
+                  <a
+                    key={route.href}
+                    href={route.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "block py-2",
+                      route.active
+                        ? "text-foreground font-medium"
+                        : "text-foreground/60 hover:text-foreground"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {route.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    className={cn(
+                      "block py-2",
+                      route.active
+                        ? "text-foreground font-medium"
+                        : "text-foreground/60 hover:text-foreground"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {route.label}
+                  </Link>
+                )
+              )}
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* ─── BOTTOM BORDER (under all of it) ───────────────────────────── */}
+      {/* BOTTOM BORDER UNDER ENTIRE HEADER */}
       <div className="border-b border-gray-200 dark:border-gray-700" />
     </header>
   )
