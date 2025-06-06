@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronUp } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 type Route = {
   href: string
@@ -21,15 +20,11 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const routes: Route[] = [
-    {
-      href: "/",
-      label: "Kodu",
-      active: pathname === "/"
-    },
+    { href: "/", label: "Kodu", active: pathname === "/" },
     {
       href: "/dfu",
       label: "DFU",
-      active: pathname === "/dfu/"
+      active: pathname === "/dfu/",
     },
     {
       href: "/staff",
@@ -39,17 +34,13 @@ export function Navigation() {
     {
       href: "/tugiliin",
       label: "Tugiliin",
-      active: pathname === "/tugiliin/"
+      active: pathname === "/tugiliin/",
     },
-    {
-      href: "/t2",
-      label: "T2",
-      active: pathname === "/t2/"
-    },
+    { href: "/t2", label: "T2", active: pathname === "/t2/" },
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="relative sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-6">
         {/* LEFT: Title */}
         <Link href="/" className="flex items-center space-x-2">
@@ -68,7 +59,7 @@ export function Navigation() {
                 className={cn(
                   "relative inline-flex items-center h-full",
                   route.active
-                    ? "text-foreground before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-foreground"
+                    ? "text-foreground before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:bg-foreground"
                     : "text-foreground/60 hover:text-foreground"
                 )}
               >
@@ -92,53 +83,62 @@ export function Navigation() {
         </nav>
 
         {/* MOBILE: Hamburger dropdown menu */}
-        <div className="md:hidden relative">
+        <div className="md:hidden">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+            {isOpen ? (
+              <ChevronUp className="h-5 w-5" />
+            ) : (
+              <ChevronDown className="h-5 w-5" />
+            )}
             <span className="sr-only">Toggle Menu</span>
           </Button>
-
-          {isOpen && (
-            <div className="absolute left-0 top-full w-full bg-background transition-all duration-200">
-              <nav className="flex flex-col items-start px-4 py-2">
-                {routes.map((route) =>
-                  route.external ? (
-                    <a
-                      key={route.href}
-                      href={route.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        "py-2 text-sm",
-                        route.active ? "text-foreground font-medium" : "text-foreground/60 hover:text-foreground"
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {route.label}
-                    </a>
-                  ) : (
-                    <Link
-                      key={route.href}
-                      href={route.href}
-                      className={cn(
-                        "py-2 text-sm",
-                        route.active ? "text-foreground font-medium" : "text-foreground/60 hover:text-foreground"
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {route.label}
-                    </Link>
-                  )
-                )}
-              </nav>
-            </div>
-          )}
         </div>
       </div>
+
+      {/* ↓ When isOpen, extend header downward with full-width nav */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-background border-t border-gray-200 dark:border-gray-700">
+          <nav className="flex flex-col px-4 py-3 space-y-1">
+            {routes.map((route) =>
+              route.external ? (
+                <a
+                  key={route.href}
+                  href={route.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "block text-sm py-2",
+                    route.active
+                      ? "text-foreground font-medium"
+                      : "text-foreground/60 hover:text-foreground"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {route.label}
+                </a>
+              ) : (
+                <Link
+                  key={route.href}
+                  href={route.href}
+                  className={cn(
+                    "block text-sm py-2",
+                    route.active
+                      ? "text-foreground font-medium"
+                      : "text-foreground/60 hover:text-foreground"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {route.label}
+                </Link>
+              )
+            )}
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
