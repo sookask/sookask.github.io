@@ -41,7 +41,7 @@ export function Navigation() {
         </Link>
 
         {/* RIGHT: Nav links (desktop only) */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-light">
+        <nav className="hidden md:flex items-center space-x-6 text-xs font-normal">
           {routes.map((route) =>
             route.external ? (
               <a
