@@ -57,7 +57,7 @@ export function Navigation() {
         </Link>
 
         {/* RIGHT: Nav links (desktop only) */}
-        <nav className="hidden md:flex items-center space-x-6 text-xs font-normal">
+        <nav className="hidden md:flex items-center space-x-6 text-xs font-normal h-14">
           {routes.map((route) =>
             route.external ? (
               <a
@@ -66,10 +66,10 @@ export function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "h-full flex items-center border-b-2 transition-colors",
+                  "relative flex items-center h-full px-1",
                   route.active
-                    ? "border-foreground text-foreground"
-                    : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
+                    ? "text-foreground before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-foreground"
+                    : "text-foreground/60 hover:text-foreground"
                 )}
               >
                 {route.label}
@@ -79,10 +79,10 @@ export function Navigation() {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "h-full flex items-center border-b-2 transition-colors",
+                  "relative flex items-center h-full px-1",
                   route.active
-                    ? "border-foreground text-foreground"
-                    : "border-transparent text-foreground/60 hover:border-foreground hover:text-foreground"
+                    ? "text-foreground before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-foreground"
+                    : "text-foreground/60 hover:text-foreground"
                 )}
               >
                 {route.label}
@@ -90,7 +90,6 @@ export function Navigation() {
             )
           )}
         </nav>
-
 
         {/* MOBILE: Hamburger menu */}
         <div className="md:hidden">
