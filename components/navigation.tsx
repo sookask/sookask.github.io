@@ -37,7 +37,7 @@ export function Navigation() {
       <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-6">
         {/* LEFT: Title */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-base font-medium">aabits</span>
+          <span className="text-xl font-semibold">aabits</span>
         </Link>
 
         {/* RIGHT: Nav links (desktop only) */}
