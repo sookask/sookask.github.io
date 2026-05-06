@@ -165,14 +165,9 @@ export default function RefinerPage() {
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     Mudeli number
                   </p>
-                  <div className="mt-3 flex items-center justify-between gap-4">
-                    <p className="text-lg font-medium text-foreground">
-                      {selectedModel.modelNumber}
-                    </p>
-                    <span className="rounded-full border border-border/70 bg-muted/60 px-3 py-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                      {selectedModel.family}
-                    </span>
-                  </div>
+                  <p className="mt-3 text-lg font-medium text-foreground">
+                    {selectedModel.modelNumber}
+                  </p>
                   <p className="mt-3 text-sm text-muted-foreground">
                     {selectedModel.displayName}
                   </p>
@@ -221,33 +216,33 @@ export default function RefinerPage() {
             className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-card via-card to-slate-100/80 p-6 backdrop-blur sm:p-8 dark:to-slate-950/40"
           >
             <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top,rgba(84,132,255,0.14),transparent_72%)] dark:bg-[radial-gradient(circle_at_top,rgba(125,162,255,0.12),transparent_72%)]" />
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Uus seerianumber
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {selectedModel.displayName}
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
-                  {resolvedYear}
-                </span>
-                <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
-                  n{generatedSerial?.week ?? "—"}
-                </span>
-                <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
-                  {selectedModel.modelNumber}
-                </span>
-              </div>
-            </div>
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              Uus seerianumber
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {selectedModel.displayName}
+            </p>
 
             <div className="mt-5 rounded-[1.75rem] border border-border/60 bg-background/90 p-5 shadow-sm">
               <div className="absolute inset-x-8 top-[108px] h-px bg-gradient-to-r from-transparent via-sky-400/40 to-transparent" />
               <p className="break-all font-mono text-3xl font-medium tracking-tight sm:text-4xl">
                 {generatedSerial?.serial ?? "Laen..."}
               </p>
+            </div>
+
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Aasta
+                </p>
+                <p className="mt-2 text-lg font-medium">{generatedSerial?.year ?? "—"}</p>
+              </div>
+              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Nädal
+                </p>
+                <p className="mt-2 text-lg font-medium">{generatedSerial?.week ?? "—"}</p>
+              </div>
             </div>
 
             {generatedSerial && (
