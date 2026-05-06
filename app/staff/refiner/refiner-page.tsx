@@ -97,9 +97,6 @@ export default function RefinerPage() {
           </h1>
           <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
             Vali menüüst mudel ja genereeri uus seerianumber.
-            Vali toetatud Maci mudel ja genereeri sellele uus 12-kohaline
-            seerianumber. Loogika järgib sama `macserial`-i formaati, mida kasutas
-            sinu olemasolev refiner.
           </p>
         </motion.div>
 

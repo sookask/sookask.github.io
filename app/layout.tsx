@@ -13,7 +13,7 @@ export const metadata = {
 }
 
 // Set the last update date
-const lastUpdateDate = "June 3, 2025"
+const lastUpdateDate = "May 6, 2026"
 
 export default function RootLayout({
   children,

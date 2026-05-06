@@ -12,7 +12,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookAir8,1",
     family: "MacBook Air",
-    displayName: "MacBook Air 13-tolli (2018)",
+    displayName: "MacBook Air 13-tolli (8,1)",
     modelNumber: "A1932",
     locationCode: "C02",
     productCode: "JK78",
@@ -21,7 +21,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookAir8,2",
     family: "MacBook Air",
-    displayName: "MacBook Air 13-tolli (2019)",
+    displayName: "MacBook Air 13-tolli (8,2)",
     modelNumber: "A1932",
     locationCode: "FVF",
     productCode: "LYWM",
@@ -30,7 +30,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookAir9,1",
     family: "MacBook Air",
-    displayName: "MacBook Air 13-tolli (2020)",
+    displayName: "MacBook Air 13-tolli (9,1)",
     modelNumber: "A2179",
     locationCode: "FVF",
     productCode: "MNHP",
@@ -39,7 +39,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro15,2",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 13-tolli 4TBT (2018-2019)",
+    displayName: "MacBook Pro 13-tolli 4TBT (15,2)",
     modelNumber: "A1989",
     locationCode: "C02",
     productCode: "JHCC",
@@ -48,7 +48,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro15,3",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 15-tolli (2018)",
+    displayName: "MacBook Pro 15-tolli (15,3)",
     modelNumber: "A1990",
     locationCode: "C02",
     productCode: "LVCG",
@@ -57,7 +57,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro15,1",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 15-tolli (2019)",
+    displayName: "MacBook Pro 15-tolli (15,1)",
     modelNumber: "A1990",
     locationCode: "C02",
     productCode: "KGYG",
@@ -66,7 +66,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro15,4",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 13-tolli 2TBT (2019)",
+    displayName: "MacBook Pro 13-tolli 2TBT (15,4)",
     modelNumber: "A2159",
     locationCode: "FVF",
     productCode: "L40Y",
@@ -75,7 +75,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro16,1",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 16-tolli (2019)",
+    displayName: "MacBook Pro 16-tolli (16,1)",
     modelNumber: "A2141",
     locationCode: "C02",
     productCode: "MD6N",
@@ -84,7 +84,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro16,2",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 13-tolli 4TBT (2020)",
+    displayName: "MacBook Pro 13-tolli 4TBT (16,2)",
     modelNumber: "A2251",
     locationCode: "C02",
     productCode: "ML7H",
@@ -93,7 +93,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "MacBookPro16,3",
     family: "MacBook Pro",
-    displayName: "MacBook Pro 13-tolli 2TBT (2020)",
+    displayName: "MacBook Pro 13-tolli 2TBT (16,3)",
     modelNumber: "A2289",
     locationCode: "C02",
     productCode: "P3XY",
@@ -102,7 +102,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "iMacPro1,1",
     family: "iMac",
-    displayName: "iMac Pro (2017)",
+    displayName: "iMac Pro (1,1)",
     modelNumber: "A1862",
     locationCode: "C02",
     productCode: "HX87",
@@ -111,7 +111,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "iMac20,2",
     family: "iMac",
-    displayName: "iMac Retina 5K, 27-tolli (2020)",
+    displayName: "iMac Retina 5K, 27-tolli (20,2)",
     modelNumber: "A2115",
     locationCode: "C02",
     productCode: "046M",
@@ -120,7 +120,7 @@ export const refinerModels: RefinerModel[] = [
   {
     id: "Macmini8,1",
     family: "Mac mini",
-    displayName: "Mac mini (2018)",
+    displayName: "Mac mini (8,1)",
     modelNumber: "A1993",
     locationCode: "C07",
     productCode: "JYVX",
