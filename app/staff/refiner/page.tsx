@@ -4,7 +4,7 @@ import RefinerPage from "./refiner-page"
 export const metadata: Metadata = {
   title: "refiner • aabits",
   description:
-    "Brauseripohine serial number generator toetatud Maci mudelitele.",
+    "Brauseripõhine seerianumbri generaator.",
 }
 
 export default function refiner() {

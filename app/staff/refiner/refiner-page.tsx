@@ -21,10 +21,18 @@ const MODEL_STORAGE_KEY = "refiner-selected-model"
 
 export default function RefinerPage() {
   const [selectedModelId, setSelectedModelId] = useState(refinerModels[0].id)
+  const [selectedYear, setSelectedYear] = useState(
+    String(refinerModels[0].supportedYears[refinerModels[0].supportedYears.length - 1])
+  )
   const [generatedSerial, setGeneratedSerial] = useState<GeneratedSerial | null>(null)
   const [copyState, setCopyState] = useState<"idle" | "copied" | "error">("idle")
 
   const selectedModel = refinerModelMap[selectedModelId]
+  const latestSupportedYear =
+    selectedModel.supportedYears[selectedModel.supportedYears.length - 1]
+  const resolvedYear = selectedModel.supportedYears.includes(Number(selectedYear))
+    ? Number(selectedYear)
+    : latestSupportedYear
   const groupedModels = Object.entries(
     refinerModels.reduce<Record<string, typeof refinerModels>>((groups, model) => {
       if (!groups[model.family]) {
@@ -35,7 +43,6 @@ export default function RefinerPage() {
       return groups
     }, {})
   )
-  const supportedYearsLabel = selectedModel.supportedYears.join(", ")
 
   useEffect(() => {
     const savedModelId = window.localStorage.getItem(MODEL_STORAGE_KEY)
@@ -45,13 +52,19 @@ export default function RefinerPage() {
   }, [])
 
   useEffect(() => {
+    if (!selectedModel.supportedYears.includes(Number(selectedYear))) {
+      setSelectedYear(String(latestSupportedYear))
+    }
+  }, [latestSupportedYear, selectedModel, selectedYear])
+
+  useEffect(() => {
     window.localStorage.setItem(MODEL_STORAGE_KEY, selectedModelId)
-    setGeneratedSerial(generateSerial(selectedModelId))
+    setGeneratedSerial(generateSerial(selectedModelId, { year: resolvedYear }))
     setCopyState("idle")
-  }, [selectedModelId])
+  }, [resolvedYear, selectedModelId])
 
   function handleGenerate() {
-    setGeneratedSerial(generateSerial(selectedModelId))
+    setGeneratedSerial(generateSerial(selectedModelId, { year: resolvedYear }))
     setCopyState("idle")
   }
 
@@ -79,13 +92,11 @@ export default function RefinerPage() {
         >
           <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.06),transparent_70%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_70%)]" />
           <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-foreground/[0.04] blur-3xl dark:bg-white/[0.06]" />
-          <p className="relative text-xs uppercase tracking-[0.24em] text-muted-foreground">
-            Serial generator
-          </p>
           <h1 className="text-4xl font-medium tracking-tighter sm:text-5xl">
-            refiner
+            seerianumbri generaator
           </h1>
           <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
+            Vali menüüst mudel ja genereeri uus seerianumber.
             Vali toetatud Maci mudel ja genereeri sellele uus 12-kohaline
             seerianumber. Loogika järgib sama `macserial`-i formaati, mida kasutas
             sinu olemasolev refiner.
@@ -100,32 +111,52 @@ export default function RefinerPage() {
             className="rounded-[2rem] border bg-card/70 p-6 backdrop-blur sm:p-8"
           >
             <div className="flex flex-col gap-8">
-              <div className="space-y-3">
-                <div className="space-y-1">
-                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                    Mudeli valik
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Vali mudel, mille jaoks tahad uut seerianumbrit genereerida.
-                  </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-3 sm:col-span-2">
+                  <div className="space-y-1">
+                    <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                      Mudeli valik
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Vali seade, mis vajab uut seerianumbrit.
+                    </p>
+                  </div>
+                  <Select value={selectedModelId} onValueChange={setSelectedModelId}>
+                    <SelectTrigger className="h-14 rounded-2xl text-left text-base">
+                      <SelectValue placeholder="Vali mudel" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {groupedModels.map(([family, models]) => (
+                        <SelectGroup key={family}>
+                          <SelectLabel>{family}</SelectLabel>
+                          {models.map((model) => (
+                            <SelectItem key={model.id} value={model.id}>
+                              {model.displayName}
+                            </SelectItem>
+                          ))}
+                        </SelectGroup>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
-                <Select value={selectedModelId} onValueChange={setSelectedModelId}>
-                  <SelectTrigger className="h-14 rounded-2xl text-left text-base">
-                    <SelectValue placeholder="Vali mudel" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {groupedModels.map(([family, models]) => (
-                      <SelectGroup key={family}>
-                        <SelectLabel>{family}</SelectLabel>
-                        {models.map((model) => (
-                          <SelectItem key={model.id} value={model.id}>
-                            {model.displayName}
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    ))}
-                  </SelectContent>
-                </Select>
+
+                <div className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    Aasta
+                  </p>
+                  <Select value={String(resolvedYear)} onValueChange={setSelectedYear}>
+                    <SelectTrigger className="h-12 rounded-2xl text-left text-base">
+                      <SelectValue placeholder="Vali aasta" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {selectedModel.supportedYears.map((year) => (
+                        <SelectItem key={year} value={String(year)}>
+                          {year}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
@@ -139,34 +170,10 @@ export default function RefinerPage() {
                 </div>
                 <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Mudelinumber
+                    Mudeli number
                   </p>
                   <p className="mt-2 text-sm text-foreground">
                     {selectedModel.modelNumber}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Tehasekood
-                  </p>
-                  <p className="mt-2 font-mono text-sm text-foreground">
-                    {selectedModel.locationCode}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Mudelikood
-                  </p>
-                  <p className="mt-2 font-mono text-sm text-foreground">
-                    {selectedModel.productCode}
-                  </p>
-                </div>
-                <div className="sm:col-span-2 rounded-2xl border border-border/60 bg-background/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Toetatud aastad
-                  </p>
-                  <p className="mt-2 text-sm text-foreground">
-                    {supportedYearsLabel}
                   </p>
                 </div>
               </div>
@@ -177,7 +184,7 @@ export default function RefinerPage() {
                   className="h-12 rounded-full px-6 text-base"
                 >
                   <RefreshCw className="mr-2 h-4 w-4" />
-                  Genereeri uus
+                  Genereeri
                 </Button>
                 <Button
                   variant="outline"
@@ -196,12 +203,10 @@ export default function RefinerPage() {
 
               <Alert className="rounded-3xl border-none bg-muted/50">
                 <AlertTitle className="text-base font-medium">
-                  Scope on meelega kitsas
+                  Võimekus on piiratud
                 </AlertTitle>
                 <AlertDescription className="mt-2 text-sm text-muted-foreground">
-                  Tööriist toetab praegu sama Intel/T2 mudelivalikut, mis sinu
-                  olemasolev refineri andmestik. Kogu `macserial` mudelibaasi ma
-                  siia meelega ei toonud.
+                   Toetatud on ainult T2 seadmete valik. Vanemate mudelite tarbeks genereerimine ei ole täna enam vajalik.
                 </AlertDescription>
               </Alert>
             </div>
@@ -255,19 +260,6 @@ export default function RefinerPage() {
                 <p className="mt-2 font-mono text-lg font-medium">
                   {generatedSerial?.weekCode ?? "—"}
                 </p>
-              </div>
-              <div className="col-span-2 rounded-2xl border border-border/60 bg-card/40 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Tootmisrea kood
-                </p>
-                <div className="mt-2 flex items-center justify-between gap-4">
-                  <p className="font-mono text-lg font-medium">
-                    {generatedSerial?.lineCode ?? "—"}
-                  </p>
-                  <p className="text-muted-foreground">
-                    tootmisrea indeks: {generatedSerial?.line ?? "—"}
-                  </p>
-                </div>
               </div>
             </div>
           </motion.aside>
