@@ -89,10 +89,13 @@ export default function RefinerPage() {
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-background via-background to-muted/40 px-6 py-10 text-center sm:px-10"
+          className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-background via-background to-slate-100/70 px-6 py-10 text-center sm:px-10 dark:to-slate-950/50"
         >
-          <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.06),transparent_70%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_70%)]" />
-          <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-foreground/[0.04] blur-3xl dark:bg-white/[0.06]" />
+          <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_top_left,rgba(84,132,255,0.10),transparent_72%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(125,162,255,0.10),transparent_72%)]" />
+          <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-sky-400/10 blur-3xl dark:bg-sky-300/10" />
+          <p className="relative text-xs uppercase tracking-[0.24em] text-muted-foreground">
+            refiner
+          </p>
           <h1 className="text-4xl font-medium tracking-tighter sm:text-5xl">
             seerianumbri generaator
           </h1>
@@ -106,44 +109,46 @@ export default function RefinerPage() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="rounded-[2rem] border bg-card/70 p-6 backdrop-blur sm:p-8"
+            className="rounded-[2rem] border bg-gradient-to-br from-card via-card to-slate-50/80 p-6 backdrop-blur sm:p-8 dark:to-slate-950/30"
           >
             <div className="flex flex-col gap-8">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-3 sm:col-span-2">
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                    Mudeli valik
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Vali seade, mis vajab uut seerianumbrit.
+                  </p>
+                </div>
+                <Select value={selectedModelId} onValueChange={setSelectedModelId}>
+                  <SelectTrigger className="h-14 rounded-2xl border-border/70 bg-background/80 text-left text-base shadow-sm">
+                    <SelectValue placeholder="Vali mudel" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {groupedModels.map(([family, models]) => (
+                      <SelectGroup key={family}>
+                        <SelectLabel>{family}</SelectLabel>
+                        {models.map((model) => (
+                          <SelectItem key={model.id} value={model.id}>
+                            {model.displayName}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-[minmax(0,220px)_minmax(0,1fr)]">
+                <div className="space-y-3">
                   <div className="space-y-1">
-                    <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                      Mudeli valik
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Vali seade, mis vajab uut seerianumbrit.
+                    <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                      Aasta
                     </p>
                   </div>
-                  <Select value={selectedModelId} onValueChange={setSelectedModelId}>
-                    <SelectTrigger className="h-14 rounded-2xl text-left text-base">
-                      <SelectValue placeholder="Vali mudel" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {groupedModels.map(([family, models]) => (
-                        <SelectGroup key={family}>
-                          <SelectLabel>{family}</SelectLabel>
-                          {models.map((model) => (
-                            <SelectItem key={model.id} value={model.id}>
-                              {model.displayName}
-                            </SelectItem>
-                          ))}
-                        </SelectGroup>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Aasta
-                  </p>
                   <Select value={String(resolvedYear)} onValueChange={setSelectedYear}>
-                    <SelectTrigger className="h-12 rounded-2xl text-left text-base">
+                    <SelectTrigger className="h-12 rounded-2xl border-border/70 bg-background/80 text-left text-base shadow-sm">
                       <SelectValue placeholder="Vali aasta" />
                     </SelectTrigger>
                     <SelectContent>
@@ -155,23 +160,21 @@ export default function RefinerPage() {
                     </SelectContent>
                   </Select>
                 </div>
-              </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Mudeli ID
-                  </p>
-                  <p className="mt-2 font-mono text-sm text-foreground">
-                    {selectedModel.id}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
+                <div className="rounded-[1.5rem] border border-border/60 bg-background/75 p-5 shadow-sm">
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     Mudeli number
                   </p>
-                  <p className="mt-2 text-sm text-foreground">
-                    {selectedModel.modelNumber}
+                  <div className="mt-3 flex items-center justify-between gap-4">
+                    <p className="text-lg font-medium text-foreground">
+                      {selectedModel.modelNumber}
+                    </p>
+                    <span className="rounded-full border border-border/70 bg-muted/60 px-3 py-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                      {selectedModel.family}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {selectedModel.displayName}
                   </p>
                 </div>
               </div>
@@ -179,7 +182,7 @@ export default function RefinerPage() {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button
                   onClick={handleGenerate}
-                  className="h-12 rounded-full px-6 text-base"
+                  className="h-12 rounded-full bg-foreground px-6 text-base text-background shadow-sm transition-transform hover:scale-[1.01] hover:bg-foreground/90"
                 >
                   <RefreshCw className="mr-2 h-4 w-4" />
                   Genereeri
@@ -188,7 +191,7 @@ export default function RefinerPage() {
                   variant="outline"
                   onClick={handleCopy}
                   disabled={!generatedSerial}
-                  className="h-12 rounded-full px-6 text-base"
+                  className="h-12 rounded-full border-border/70 bg-background/70 px-6 text-base shadow-sm"
                 >
                   <Copy className="mr-2 h-4 w-4" />
                   {copyState === "copied"
@@ -204,7 +207,8 @@ export default function RefinerPage() {
                   Võimekus on piiratud
                 </AlertTitle>
                 <AlertDescription className="mt-2 text-sm text-muted-foreground">
-                   Toetatud on ainult T2 seadmete valik. Vanemate mudelite tarbeks genereerimine ei ole täna enam vajalik.
+                  Toetatud on ainult T2 seadmete valik. Vanemate mudelite tarbeks
+                  genereerimine ei ole täna enam vajalik.
                 </AlertDescription>
               </Alert>
             </div>
@@ -214,55 +218,54 @@ export default function RefinerPage() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-card via-card to-muted/50 p-6 backdrop-blur sm:p-8"
+            className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-card via-card to-slate-100/80 p-6 backdrop-blur sm:p-8 dark:to-slate-950/40"
           >
-            <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.08),transparent_72%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_72%)]" />
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Uus seerianumber
-            </p>
-            <div className="mt-4 rounded-[1.5rem] border border-border/60 bg-background/80 p-5 shadow-sm">
+            <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top,rgba(84,132,255,0.14),transparent_72%)] dark:bg-[radial-gradient(circle_at_top,rgba(125,162,255,0.12),transparent_72%)]" />
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                  Uus seerianumber
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {selectedModel.displayName}
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
+                  {resolvedYear}
+                </span>
+                <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
+                  {selectedModel.modelNumber}
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-5 rounded-[1.75rem] border border-border/60 bg-background/90 p-5 shadow-sm">
+              <div className="absolute inset-x-8 top-[108px] h-px bg-gradient-to-r from-transparent via-sky-400/40 to-transparent" />
               <p className="break-all font-mono text-3xl font-medium tracking-tight sm:text-4xl">
                 {generatedSerial?.serial ?? "Laen..."}
               </p>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-4">
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                   Aasta
                 </p>
-                <p className="mt-2 text-lg font-medium">
-                  {generatedSerial?.year ?? "—"}
-                </p>
+                <p className="mt-2 text-lg font-medium">{generatedSerial?.year ?? "—"}</p>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-4">
+              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Aasta
+                </p>
                   Nädal
                 </p>
-                <p className="mt-2 text-lg font-medium">
-                  {generatedSerial?.week ?? "—"}
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Aastakood
-                </p>
-                <p className="mt-2 font-mono text-lg font-medium">
-                  {generatedSerial?.yearCode ?? "—"}
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-card/40 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Nädalakood
-                </p>
-                <p className="mt-2 font-mono text-lg font-medium">
-                  {generatedSerial?.weekCode ?? "—"}
-                </p>
+                <p className="mt-2 text-lg font-medium">{generatedSerial?.week ?? "—"}</p>
               </div>
             </div>
 
             {generatedSerial && (
-              <div className="mt-4 rounded-[1.5rem] border border-border/60 bg-card/30 p-4">
+              <div className="mt-5 rounded-[1.75rem] border border-border/60 bg-background/80 p-4 shadow-sm">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                   Barcode
                 </p>
