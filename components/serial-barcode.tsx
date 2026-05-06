@@ -52,6 +52,7 @@ export function SerialBarcode({ value, className }: SerialBarcodeProps) {
   const wide = 5
   const gap = 2
   const height = 72
+  const verticalPadding = 12
 
   let x = 12
   const bars: Array<{ x: number; width: number }> = []
@@ -78,36 +79,35 @@ export function SerialBarcode({ value, className }: SerialBarcodeProps) {
   }
 
   const totalWidth = x + 12
+  const totalHeight = height + verticalPadding * 2
 
   return (
     <div className={className}>
       <svg
-        viewBox={`0 0 ${totalWidth} ${height + 26}`}
+        viewBox={`0 0 ${totalWidth} ${totalHeight}`}
         role="img"
         aria-label={`Barcode for serial ${value}`}
         className="h-auto w-full"
       >
-        <rect width={totalWidth} height={height + 26} rx="18" fill="currentColor" className="text-background dark:text-card" />
+        <rect
+          width={totalWidth}
+          height={totalHeight}
+          rx="18"
+          fill="currentColor"
+          className="text-background dark:text-card"
+        />
         <g className="text-foreground dark:text-white">
           {bars.map((bar, index) => (
             <rect
               key={`${bar.x}-${index}`}
               x={bar.x}
-              y={12}
+              y={verticalPadding}
               width={bar.width}
               height={height}
               fill="currentColor"
             />
           ))}
         </g>
-        <text
-          x={totalWidth / 2}
-          y={height + 18}
-          textAnchor="middle"
-          className="fill-current text-[14px] tracking-[0.28em] text-foreground dark:text-white"
-        >
-          {value}
-        </text>
       </svg>
     </div>
   )
