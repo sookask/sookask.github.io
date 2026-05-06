@@ -235,6 +235,9 @@ export default function RefinerPage() {
                   {resolvedYear}
                 </span>
                 <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
+                  n{generatedSerial?.week ?? "—"}
+                </span>
+                <span className="rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.14em] text-muted-foreground shadow-sm">
                   {selectedModel.modelNumber}
                 </span>
               </div>
@@ -245,23 +248,6 @@ export default function RefinerPage() {
               <p className="break-all font-mono text-3xl font-medium tracking-tight sm:text-4xl">
                 {generatedSerial?.serial ?? "Laen..."}
               </p>
-            </div>
-
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Aasta
-                </p>
-                <p className="mt-2 text-lg font-medium">{generatedSerial?.year ?? "—"}</p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Aasta
-                </p>
-                  Nädal
-                </p>
-                <p className="mt-2 text-lg font-medium">{generatedSerial?.week ?? "—"}</p>
-              </div>
             </div>
 
             {generatedSerial && (
