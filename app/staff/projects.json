@@ -12,11 +12,11 @@
 	{
 	  "id": 1,
 	  "title": "refiner",
-	  "description": "refiner on tehnikutele mõeldud macOS-i tööriist, mis võimaldab luua ehtsad Mac seadmete seerianumbreid. See on lahendus tehnikutele, kes vajavad seerianumbreid oma tööprotsessides.",
+	  "description": "refiner on nüüd siin lehel jooksev tööriist, mis genereerib toetatud Maci mudelitele macseriali reeglite järgi uusi seerianumbreid. Algne idee tuli macOS-i äpist, kuid lihtsam kasutuskoht on brauser.",
 	  "link": "/staff/refiner",
 	  "type": "äpp",
 	  "year": "Kodukootud",
-	  "motivation": "refiner on macOS-i rakendus, mis võimaldab kiiresti genereerida kehtiva formaadiga Mac seadmete seerianumbreid.",
+	  "motivation": "Brauseris jooksev refiner võimaldab kiiresti genereerida kehtiva formaadiga seerianumbreid ilma eraldi rakendust avamata.",
 	  "logoImage": "/assets/images/projects/refiner.png"
 	},
 	{
