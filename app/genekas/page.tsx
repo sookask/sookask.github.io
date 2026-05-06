@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
-import RefinerPage from "./refiner-page"
+import GenekasPage from "./genekas-page"
 
 export const metadata: Metadata = {
-  title: "refiner • aabits",
+  title: "genekas • aabits",
   description:
     "Brauseripõhine seerianumbri generaator.",
 }
 
-export default function refiner() {
-  return <RefinerPage />
+export default function genekas() {
+  return <GenekasPage />
 }

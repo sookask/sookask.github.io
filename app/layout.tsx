@@ -21,16 +21,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1D1D1F" media="(prefers-color-scheme: dark)" />
         <link rel="icon" type="image/png" href="/assets/images/bitmap.png" />
       </head>
 
-
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
             <Navigation />
             <main className="flex-1 ">{children}</main>

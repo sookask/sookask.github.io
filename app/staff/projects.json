@@ -10,16 +10,6 @@
 		"logoImage": "/assets/images/projects/mist.png"
 	},
 	{
-	  "id": 1,
-	  "title": "refiner",
-	  "description": "refiner on nüüd siin lehel jooksev tööriist, mis genereerib toetatud Maci mudelitele macseriali reeglite järgi uusi seerianumbreid. Algne idee tuli macOS-i äpist, kuid lihtsam kasutuskoht on brauser.",
-	  "link": "/staff/refiner",
-	  "type": "äpp",
-	  "year": "Kodukootud",
-	  "motivation": "Brauseris jooksev refiner võimaldab kiiresti genereerida kehtiva formaadiga seerianumbreid ilma eraldi rakendust avamata.",
-	  "logoImage": "/assets/images/projects/refiner.png"
-	},
-	{
 	  "id": 2,
 	  "title": "DFU Blaster",
 	  "description": "DFU Blaster on tööriist, mis lihtsustab Apple Silicon ja Intel arvutite viimist DFU režiimi. Traditsiooniliselt nõuab DFU režiimi viimine keerulisi klahvikombinatsioone ja täpset ajastust, kuid DFU Blaster võimaldab seda teha ühe nupuvajutusega. Toimib ainult Apple Silicon tööarvutitega.",
