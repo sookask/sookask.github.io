@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { SerialBarcode } from "@/components/serial-barcode"
 import { generateSerial, type GeneratedSerial } from "@/lib/serial-generator"
 import { refinerModelMap, refinerModels } from "@/lib/refiner-models"
 import { Copy, RefreshCw } from "lucide-react"
@@ -259,6 +260,15 @@ export default function RefinerPage() {
                 </p>
               </div>
             </div>
+
+            {generatedSerial && (
+              <div className="mt-4 rounded-[1.5rem] border border-border/60 bg-card/30 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Barcode
+                </p>
+                <SerialBarcode value={generatedSerial.serial} className="mt-3" />
+              </div>
+            )}
           </motion.aside>
         </div>
       </div>
