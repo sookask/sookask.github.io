@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select"
 import { generateSerial, type GeneratedSerial } from "@/lib/serial-generator"
 import { refinerModelMap, refinerModels } from "@/lib/refiner-models"
-import { Copy, Cpu, RefreshCw } from "lucide-react"
+import { Copy, RefreshCw } from "lucide-react"
 
 const MODEL_STORAGE_KEY = "refiner-selected-model"
 
@@ -35,6 +35,7 @@ export default function RefinerPage() {
       return groups
     }, {})
   )
+  const supportedYearsLabel = selectedModel.supportedYears.join(", ")
 
   useEffect(() => {
     const savedModelId = window.localStorage.getItem(MODEL_STORAGE_KEY)
@@ -74,19 +75,20 @@ export default function RefinerPage() {
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col gap-4 text-center"
+          className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-background via-background to-muted/40 px-6 py-10 text-center sm:px-10"
         >
-          <div className="mx-auto inline-flex items-center rounded-full border border-black/10 bg-background/70 px-4 py-1.5 text-sm font-medium text-foreground/80 backdrop-blur dark:border-white/15">
-            <Cpu className="mr-2 h-4 w-4" />
-            brauseri port sinu olemasolevast refinerist
-          </div>
+          <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_top_left,rgba(0,0,0,0.06),transparent_70%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_70%)]" />
+          <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-foreground/[0.04] blur-3xl dark:bg-white/[0.06]" />
+          <p className="relative text-xs uppercase tracking-[0.24em] text-muted-foreground">
+            Serial generator
+          </p>
           <h1 className="text-4xl font-medium tracking-tighter sm:text-5xl">
             refiner
           </h1>
           <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Vali toetatud Maci mudel ja leht genereerib selle jaoks uue
-            12-kohalise seerianumbri samade reeglitega, mida sinu macOS-i versioon
-            kasutas `macserial` kaudu.
+            Vali toetatud Maci mudel ja genereeri sellele uus 12-kohaline
+            seerianumber. Loogika järgib sama `macserial`-i formaati, mida kasutas
+            sinu olemasolev refiner.
           </p>
         </motion.div>
 
@@ -95,13 +97,18 @@ export default function RefinerPage() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="rounded-[2rem] border bg-card/60 p-6 backdrop-blur sm:p-8"
+            className="rounded-[2rem] border bg-card/70 p-6 backdrop-blur sm:p-8"
           >
             <div className="flex flex-col gap-8">
-              <div className="space-y-2">
-                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                  Mudel
-                </p>
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                    Mudeli valik
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Vali mudel, mille jaoks tahad uut seerianumbrit genereerida.
+                  </p>
+                </div>
                 <Select value={selectedModelId} onValueChange={setSelectedModelId}>
                   <SelectTrigger className="h-14 rounded-2xl text-left text-base">
                     <SelectValue placeholder="Vali mudel" />
@@ -132,7 +139,7 @@ export default function RefinerPage() {
                 </div>
                 <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Model Number
+                    Mudelinumber
                   </p>
                   <p className="mt-2 text-sm text-foreground">
                     {selectedModel.modelNumber}
@@ -148,10 +155,18 @@ export default function RefinerPage() {
                 </div>
                 <div className="rounded-2xl border border-border/60 bg-background/70 p-4">
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    Product Code
+                    Mudelikood
                   </p>
                   <p className="mt-2 font-mono text-sm text-foreground">
                     {selectedModel.productCode}
+                  </p>
+                </div>
+                <div className="sm:col-span-2 rounded-2xl border border-border/60 bg-background/70 p-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    Toetatud aastad
+                  </p>
+                  <p className="mt-2 text-sm text-foreground">
+                    {supportedYearsLabel}
                   </p>
                 </div>
               </div>
@@ -184,10 +199,9 @@ export default function RefinerPage() {
                   Scope on meelega kitsas
                 </AlertTitle>
                 <AlertDescription className="mt-2 text-sm text-muted-foreground">
-                  See port toetab praegu sama Intel/T2 mudelivalikut, mis sinu
-                  olemasolev refineri andmestik. Ma ei toonud siia kogu
-                  `macserial` mudelibaasi, sest see paisutaks GitHub Pagesi jaoks
-                  lehe mõttetult suureks.
+                  Tööriist toetab praegu sama Intel/T2 mudelivalikut, mis sinu
+                  olemasolev refineri andmestik. Kogu `macserial` mudelibaasi ma
+                  siia meelega ei toonud.
                 </AlertDescription>
               </Alert>
             </div>
@@ -197,12 +211,13 @@ export default function RefinerPage() {
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="rounded-[2rem] border bg-background/80 p-6 backdrop-blur sm:p-8"
+            className="relative overflow-hidden rounded-[2rem] border bg-gradient-to-br from-card via-card to-muted/50 p-6 backdrop-blur sm:p-8"
           >
+            <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.08),transparent_72%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_72%)]" />
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Genereeritud seerianumber
+              Uus seerianumber
             </p>
-            <div className="mt-4 rounded-[1.5rem] border border-border/60 bg-card/70 p-5">
+            <div className="mt-4 rounded-[1.5rem] border border-border/60 bg-background/80 p-5 shadow-sm">
               <p className="break-all font-mono text-3xl font-medium tracking-tight sm:text-4xl">
                 {generatedSerial?.serial ?? "Laen..."}
               </p>
@@ -227,7 +242,7 @@ export default function RefinerPage() {
               </div>
               <div className="rounded-2xl border border-border/60 bg-card/40 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Year Code
+                  Aastakood
                 </p>
                 <p className="mt-2 font-mono text-lg font-medium">
                   {generatedSerial?.yearCode ?? "—"}
@@ -235,7 +250,7 @@ export default function RefinerPage() {
               </div>
               <div className="rounded-2xl border border-border/60 bg-card/40 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Week Code
+                  Nädalakood
                 </p>
                 <p className="mt-2 font-mono text-lg font-medium">
                   {generatedSerial?.weekCode ?? "—"}
@@ -243,14 +258,14 @@ export default function RefinerPage() {
               </div>
               <div className="col-span-2 rounded-2xl border border-border/60 bg-card/40 p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Line
+                  Tootmisrea kood
                 </p>
                 <div className="mt-2 flex items-center justify-between gap-4">
                   <p className="font-mono text-lg font-medium">
                     {generatedSerial?.lineCode ?? "—"}
                   </p>
                   <p className="text-muted-foreground">
-                    dekodeeritud joon: {generatedSerial?.line ?? "—"}
+                    tootmisrea indeks: {generatedSerial?.line ?? "—"}
                   </p>
                 </div>
               </div>
