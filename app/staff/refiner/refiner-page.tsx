@@ -253,7 +253,7 @@ export default function RefinerPage() {
             {generatedSerial && (
               <div className="mt-5 rounded-[1.75rem] border border-border/60 bg-background/80 p-4 shadow-sm">
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Barcode
+                  RIBAKOOD
                 </p>
                 <SerialBarcode value={generatedSerial.serial} className="mt-3" />
               </div>
