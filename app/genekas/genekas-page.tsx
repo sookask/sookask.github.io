@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import * as XLSX from "xlsx"
+import QRCode from "qrcode.react"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import {
   Select,
@@ -13,7 +15,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { SerialBarcode } from "@/components/serial-barcode"
 import { generateSerial, type GeneratedSerial } from "@/lib/serial-generator"
 import { refinerModelMap, refinerModels } from "@/lib/refiner-models"
 import { AlertCircle, Check, Copy, RefreshCw } from "lucide-react"
@@ -21,6 +22,8 @@ import { AlertCircle, Check, Copy, RefreshCw } from "lucide-react"
 const MODEL_STORAGE_KEY = "genekas-selected-model"
 
 export default function GenekasPage() {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   const [selectedModelId, setSelectedModelId] = useState(refinerModels[0].id)
   const [generatedSerial, setGeneratedSerial] = useState<GeneratedSerial | null>(null)
   const [copyState, setCopyState] = useState<"idle" | "copied" | "error">("idle")
@@ -47,6 +50,7 @@ export default function GenekasPage() {
     if (savedModelId && refinerModelMap[savedModelId]) {
       setSelectedModelId(savedModelId)
     }
+    setMounted(true)
   }, [])
 
   useEffect(() => {
@@ -302,28 +306,35 @@ export default function GenekasPage() {
             </button>
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Tootmisaasta
-                </p>
-                <p className="mt-2 text-lg font-medium">{generatedSerial?.year ?? "—"}</p>
+              <div className="flex flex-col gap-4">
+                <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    Tootmisaasta
+                  </p>
+                  <p className="mt-2 text-lg font-medium">{generatedSerial?.year ?? "—"}</p>
+                </div>
+                <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    Tootmisnädal
+                  </p>
+                  <p className="mt-2 text-lg font-medium">{generatedSerial?.week ?? "—"}</p>
+                </div>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-background/70 p-4 shadow-sm">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  Tootmisnädal
-                </p>
-                <p className="mt-2 text-lg font-medium">{generatedSerial?.week ?? "—"}</p>
-              </div>
+              {generatedSerial && mounted && (
+                <div className="flex items-center justify-center rounded-3xl border border-border/60 bg-background/70 px-1 py-2 shadow-sm overflow-hidden">
+                  <div className="rounded-2xl overflow-hidden">
+                    <QRCode 
+                      value={generatedSerial.serial} 
+                      size={160} 
+                      level="H" 
+                      includeMargin 
+                      fgColor={theme === "dark" ? "#ffffff" : "#000000"}
+                      bgColor="transparent"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
-
-            {generatedSerial && (
-              <div className="mt-5 rounded-[1.75rem] border border-border/60 bg-background/80 p-4 shadow-sm">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  RIBAKOOD
-                </p>
-                <SerialBarcode value={generatedSerial.serial} className="mt-3" />
-              </div>
-            )}
           </motion.aside>
         </div>
 
