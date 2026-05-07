@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import * as XLSX from "xlsx"
-import QRCode from "qrcode.react"
+import { QRCodeSVG } from "qrcode.react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import {
@@ -323,11 +323,11 @@ export default function GenekasPage() {
               {generatedSerial && mounted && (
                 <div className="flex items-center justify-center rounded-3xl border border-border/60 bg-background/70 px-1 py-2 shadow-sm overflow-hidden">
                   <div className="rounded-2xl overflow-hidden">
-                    <QRCode 
-                      value={generatedSerial.serial} 
-                      size={160} 
-                      level="H" 
-                      includeMargin 
+                    <QRCodeSVG
+                      value={generatedSerial.serial}
+                      size={160}
+                      level="H"
+                      includeMargin
                       fgColor={theme === "dark" ? "#ffffff" : "#000000"}
                       bgColor="transparent"
                     />
